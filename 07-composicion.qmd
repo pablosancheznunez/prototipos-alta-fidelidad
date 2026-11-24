@@ -65,7 +65,7 @@ Las WCAG exigen que el contenido se pueda ver sin desplazamiento horizontal a un
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 attr(rejilla(1440, 12, 24, 80), "ancho_columna")
 ancho_bloque(8, 1440, 12, 24, 80)   # módulo principal
 ancho_bloque(4, 1440, 12, 24, 80)   # lateral
@@ -78,7 +78,7 @@ En tableta (1024 px, 8 columnas, medianil de 24 px y margen de 32 px), ¿cuánto
 ```{webr}
 #| exercise: t7_tableta
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}

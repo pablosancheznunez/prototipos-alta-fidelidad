@@ -78,7 +78,7 @@ Los significados del color no son universales. El rojo es peligro o error en muc
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 revisar_paleta(paleta_ejemplo)[, c("nombre", "color", "contraste", "texto_normal_AA", "componente_AA")]
 ```
 
@@ -89,7 +89,7 @@ El azul primario `#1a73e8` cumple por muy poco el 4,5:1 sobre blanco. ¿Y su ver
 ```{webr}
 #| exercise: t5_contraste
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}
@@ -125,7 +125,7 @@ Simula con **protanopía** los colores de aviso (`acento`) y error de la paleta,
 ```{webr}
 #| exercise: t5_cvd
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}

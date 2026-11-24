@@ -70,7 +70,7 @@ La legibilidad depende también del **contraste** con el fondo: las WCAG exigen 
 
 ```{webr}
 #| autorun: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 escala_tipografica(base = 16, razon = 1.25, pasos = -1:5)
 ```
 
@@ -81,7 +81,7 @@ Calcula el tamaño del paso 3 de una escala de base 16 px y razón **1,333** (cu
 ```{webr}
 #| exercise: t4_escala
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}
@@ -119,7 +119,7 @@ if (isTRUE(all.equal(as.numeric(.result), 37.9))) {
 ```{webr}
 #| exercise: t4_linea
 #| setup: true
-source("datos/uxlearn.R")
+source("datos/funciones_ux.R")
 ```
 
 ```{webr}
