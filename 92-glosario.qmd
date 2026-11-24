@@ -1,0 +1,224 @@
+---
+engine: markdown
+---
+
+# Glosario {#sec-glosario}
+
+Términos del libro ordenados por tema. Cada entrada enlaza con el tema donde se explica.
+
+## Tema 1. Fundamentos
+
+### Prototipo {#gl-prototipo}
+Representación de un diseño que se construye para aprender algo sobre él antes de desarrollarlo. → [Tema 1](01-fundamentos.qmd)
+
+### Fidelidad {#gl-fidelidad}
+Grado en que un prototipo se parece al producto final; tiene varias dimensiones independientes. → [Tema 1](01-fundamentos.qmd)
+
+### Alta fidelidad {#gl-alta}
+Prototipo que se parece al producto final en casi todas sus dimensiones: aspecto, contenido e interacción. → [Tema 1](01-fundamentos.qmd)
+
+### Prototipo interactivo {#gl-interactivo}
+Prototipo con estados, transiciones y microinteracciones que reproduce la sensación de uso. → [Tema 1](01-fundamentos.qmd)
+
+### Coste del cambio {#gl-coste}
+Esfuerzo, en tiempo y en apego del equipo, que supone modificar un diseño; crece con la fidelidad. → [Tema 1](01-fundamentos.qmd)
+
+## Tema 2. Maquetas
+
+### Maqueta {#gl-maqueta}
+*Mockup*. Representación estática de una pantalla con su aspecto visual definitivo y sin interacción. → [Tema 2](02-maquetas.qmd)
+
+### Primera impresión {#gl-primera-impresion}
+Valoración del atractivo visual que se forma en unos 50 ms (Lindgaard et al., 2006). → [Tema 2](02-maquetas.qmd)
+
+### Contenido real {#gl-contenido-real}
+Textos, nombres, cifras e imágenes reales o realistas en lugar de texto de relleno. → [Tema 2](02-maquetas.qmd)
+
+### Caso límite {#gl-limite}
+Situación extrema del contenido o del uso (el texto más largo, la lista vacía) que pone a prueba el diseño. → [Tema 2](02-maquetas.qmd)
+
+### Efecto de estética-usabilidad {#gl-estetica}
+Tendencia a percibir como más fáciles de usar las interfaces que se perciben como atractivas. → [Tema 2](02-maquetas.qmd)
+
+## Tema 3. De la baja a la alta fidelidad
+
+### Trazabilidad {#gl-trazabilidad}
+Posibilidad de explicar de dónde viene cada decisión de diseño. → [Tema 3](03-transicion.qmd)
+
+### Intención del diseño {#gl-intencion}
+Lo que el diseño pretende conseguir: estructura, jerarquía y flujo validados. → [Tema 3](03-transicion.qmd)
+
+### Registro de decisiones {#gl-registro}
+Tabla con la fecha, la decisión, el motivo, la evidencia y las pantallas afectadas. → [Tema 3](03-transicion.qmd)
+
+### Microinteracción {#gl-microinteraccion}
+Momento de interacción con un solo propósito, con disparador, reglas, retroalimentación y bucles (Saffer, 2013). → [Tema 3](03-transicion.qmd)
+
+### Disparador {#gl-disparador}
+Lo que inicia una microinteracción: una acción de la persona o una condición del sistema. → [Tema 3](03-transicion.qmd)
+
+### Retroalimentación {#gl-retroalimentacion}
+Forma en que la interfaz comunica lo que está pasando o lo que ha pasado. → [Tema 3](03-transicion.qmd)
+
+## Tema 4. Tipografía
+
+### Familia tipográfica {#gl-familia}
+Conjunto de tipos con un diseño común en varios pesos y estilos. → [Tema 4](04-tipografia.qmd)
+
+### Escala modular {#gl-escala}
+Serie de tamaños en la que cada uno se obtiene multiplicando el anterior por una razón constante. → [Tema 4](04-tipografia.qmd)
+
+### Interlineado {#gl-interlineado}
+Altura de línea: distancia vertical entre líneas de texto. → [Tema 4](04-tipografia.qmd)
+
+### Longitud de línea {#gl-longitud}
+Número de caracteres por línea; para la lectura cómoda se usan de 45 a 75. → [Tema 4](04-tipografia.qmd)
+
+### Legibilidad {#gl-legibilidad}
+Facilidad con que se distinguen las letras y se lee un texto. → [Tema 4](04-tipografia.qmd)
+
+### Altura de la x {#gl-altura-x}
+Altura de las minúsculas sin ascendentes ni descendentes; si es generosa, la letra se lee mejor a tamaños pequeños. → [Tema 4](04-tipografia.qmd)
+
+### Unidad rem {#gl-rem}
+Unidad relativa al tamaño de letra raíz, que respeta el tamaño que elige la persona. → [Tema 4](04-tipografia.qmd)
+
+## Tema 5. Color
+
+### Tono, saturación y luminosidad {#gl-hsl}
+Tres propiedades con las que se describe un color: posición en el círculo cromático, intensidad y claridad. → [Tema 5](05-color.qmd)
+
+### Luminancia relativa {#gl-luminancia}
+Claridad de un color según la fórmula de las WCAG, base del cálculo del contraste. → [Tema 5](05-color.qmd)
+
+### Contraste {#gl-contraste}
+Relación entre la luminancia de dos colores, de 1:1 a 21:1. → [Tema 5](05-color.qmd)
+
+### Daltonismo {#gl-daltonismo}
+Deficiencia en la visión de los colores; la más frecuente afecta al eje rojo-verde. → [Tema 5](05-color.qmd)
+
+### Color semántico {#gl-semantico}
+Color que comunica un estado: error, aviso, éxito, información. → [Tema 5](05-color.qmd)
+
+### Paleta {#gl-paleta}
+Conjunto de colores de un producto con sus funciones y tonos. → [Tema 5](05-color.qmd)
+
+## Tema 6. Iconografía
+
+### Icono {#gl-icono}
+Imagen pequeña que representa una acción, un objeto o un estado. → [Tema 6](06-iconografia.qmd)
+
+### Sistema de iconos {#gl-sistema-iconos}
+Conjunto de iconos con las mismas reglas de estilo. → [Tema 6](06-iconografia.qmd)
+
+### Rejilla de icono {#gl-rejilla-icono}
+Cuadrícula común sobre la que se dibujan todos los iconos de un sistema. → [Tema 6](06-iconografia.qmd)
+
+### Distancia semántica {#gl-distancia}
+Cuánto se aleja la imagen de un icono de lo que significa (McDougall et al., 1999). → [Tema 6](06-iconografia.qmd)
+
+### Concreción {#gl-concrecion}
+Grado en que un icono representa un objeto reconocible. → [Tema 6](06-iconografia.qmd)
+
+### Nombre accesible {#gl-nombre-accesible}
+Texto que las tecnologías de apoyo leen para identificar un elemento interactivo. → [Tema 6](06-iconografia.qmd)
+
+## Tema 7. Composición
+
+### Rejilla {#gl-rejilla}
+División del espacio en columnas, medianiles y márgenes para alinear los elementos. → [Tema 7](07-composicion.qmd)
+
+### Proporción {#gl-proporcion}
+Relación de tamaño entre elementos. → [Tema 7](07-composicion.qmd)
+
+### Equilibrio visual {#gl-equilibrio}
+Reparto compensado del peso visual en la composición. → [Tema 7](07-composicion.qmd)
+
+### Ritmo {#gl-ritmo}
+Repetición regular de elementos y espacios. → [Tema 7](07-composicion.qmd)
+
+### Estética clásica y expresiva {#gl-clasica}
+Dos dimensiones de la estética percibida: orden y claridad, frente a creatividad y originalidad (Lavie y Tractinsky, 2004). → [Tema 7](07-composicion.qmd)
+
+### Diseño adaptable {#gl-adaptable}
+*Responsive*. Diseño que reorganiza la composición según el tamaño de la pantalla. → [Tema 7](07-composicion.qmd)
+
+### Punto de ruptura {#gl-ruptura}
+Ancho de pantalla en el que cambia la composición adaptable. → [Tema 7](07-composicion.qmd)
+
+## Tema 8. Espacio
+
+### Espacio negativo {#gl-espacio}
+Parte de la composición que no ocupa ningún elemento. → [Tema 8](08-espacio.qmd)
+
+### Macroespacio {#gl-macro}
+Espacio entre las grandes partes de la composición: márgenes, secciones, módulos. → [Tema 8](08-espacio.qmd)
+
+### Microespacio {#gl-micro}
+Espacio a escala fina: interlineado, relleno de botones, distancia entre etiqueta y campo. → [Tema 8](08-espacio.qmd)
+
+### Complejidad visual {#gl-complejidad}
+Cantidad y variedad de elementos visuales; la baja complejidad mejora la primera impresión (Tuch et al., 2012). → [Tema 8](08-espacio.qmd)
+
+### Densidad de información {#gl-densidad}
+Cantidad de información por unidad de espacio, que debe ajustarse a la tarea y la frecuencia de uso. → [Tema 8](08-espacio.qmd)
+
+### Proximidad {#gl-proximidad}
+Principio de la Gestalt: lo cercano se percibe como relacionado. → [Tema 8](08-espacio.qmd)
+
+## Tema 9. Sistemas de diseño
+
+### Sistema de diseño {#gl-sistema}
+Principios, estilos, componentes, patrones, código y documentación con los que una organización diseña de forma coherente. → [Tema 9](09-sistemas.qmd)
+
+### Biblioteca de componentes {#gl-biblioteca}
+Colección de componentes reutilizables con sus variantes y estados. → [Tema 9](09-sistemas.qmd)
+
+### *Token* de diseño {#gl-token}
+Decisión de estilo con nombre funcional, independiente de la herramienta. → [Tema 9](09-sistemas.qmd)
+
+### Diseño atómico {#gl-atomico}
+Método de Frost (2016) que construye las interfaces en cinco niveles: átomos, moléculas, organismos, plantillas y páginas. → [Tema 9](09-sistemas.qmd)
+
+### Variante {#gl-variante}
+Versión de un componente para un uso (primario, secundario) o un tamaño. → [Tema 9](09-sistemas.qmd)
+
+### Gobernanza {#gl-gobernanza}
+Reglas sobre quién decide, cómo se proponen cambios y cómo se versiona un sistema de diseño. → [Tema 9](09-sistemas.qmd)
+
+## Tema 10. Críticas de diseño
+
+### Crítica de diseño {#gl-critica}
+Sesión para analizar un diseño en curso respecto a sus objetivos. → [Tema 10](10-critica.qmd)
+
+### Retroalimentación accionable {#gl-accionable}
+Comentario específico, relacionado con los objetivos, que permite decidir qué hacer. → [Tema 10](10-critica.qmd)
+
+### Facilitación {#gl-facilitacion}
+Papel que controla el tiempo, reconduce los comentarios y resume las conclusiones de la crítica. → [Tema 10](10-critica.qmd)
+
+### Objetivo de la crítica {#gl-objetivo-critica}
+Lo que quien presenta quiere que se comente, y lo que no. → [Tema 10](10-critica.qmd)
+
+### Registro de comentarios {#gl-registro-comentarios}
+Lista de los comentarios recibidos para priorizarlos después. → [Tema 10](10-critica.qmd)
+
+## Tema 11. Entrega y traspaso
+
+### Traspaso {#gl-traspaso}
+*Handoff*. Paso del diseño al equipo que lo construye. → [Tema 11](11-entrega.qmd)
+
+### Especificación {#gl-especificacion}
+Documentación precisa de flujos, estilos, componentes, estados, interacciones, contenido y accesibilidad. → [Tema 11](11-entrega.qmd)
+
+### Anotación {#gl-anotacion}
+Nota en el diseño que explica un comportamiento, una regla o un caso límite que el dibujo no muestra. → [Tema 11](11-entrega.qmd)
+
+### Ruptura de diseño {#gl-ruptura-diseno}
+*Design breakdown*. Punto en el que el diseño no basta para que el desarrollo lo interprete correctamente (Maudet et al., 2017). → [Tema 11](11-entrega.qmd)
+
+### Control de versiones {#gl-versiones}
+Organización de los archivos de diseño para que todos trabajen sobre la versión correcta. → [Tema 11](11-entrega.qmd)
+
+### Revisión de la implementación {#gl-revision-implementacion}
+*Design QA*. Comparación de lo construido con el diseño para priorizar las diferencias. → [Tema 11](11-entrega.qmd)

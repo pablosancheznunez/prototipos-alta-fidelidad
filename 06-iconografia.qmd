@@ -1,0 +1,120 @@
+---
+engine: markdown
+---
+
+# Tema 6. Iconografía {#sec-tema6}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Diseñar o elegir un sistema de iconos coherente en estilo.
+- Asegurar la legibilidad de los iconos a distintos tamaños.
+- Aplicar criterios de neutralidad cultural y de género y de representación inclusiva.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Icono](92-glosario.qmd#gl-icono) · [Sistema de iconos](92-glosario.qmd#gl-sistema-iconos) · [Rejilla de icono](92-glosario.qmd#gl-rejilla-icono) · [Distancia semántica](92-glosario.qmd#gl-distancia) · [Concreción](92-glosario.qmd#gl-concrecion) · [Nombre accesible](92-glosario.qmd#gl-nombre-accesible)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+McDougall, S. J. P.; Curry, M. B.; de Bruijn, O. (1999). [Measuring symbol and icon characteristics: Norms for concreteness, complexity, meaningfulness, familiarity, and semantic distance for 239 symbols](https://doi.org/10.3758/BF03200730). *Behavior Research Methods, Instruments, & Computers*, 31(3), 487-519.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Material Design 3. [Icons](https://m3.material.io/styles/icons/overview). Un sistema de iconos documentado.
+- Apple Human Interface Guidelines. [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols). Iconos alineados con la tipografía.
+
+## 1. Para qué sirve un icono
+
+Un **icono** representa una acción, un objeto o un estado con una imagen pequeña. Ahorra espacio y, cuando es conocido, se reconoce más rápido que una palabra. Pero los iconos son mucho menos universales de lo que parecen: fuera de unos pocos muy asentados (casa, lupa, papelera, engranaje), la mayoría se entiende mal sin etiqueta.
+
+McDougall, Curry y de Bruijn (1999) midieron cinco características de 239 símbolos: **concreción** (si representa un objeto reconocible), **complejidad** visual, **significatividad**, **familiaridad** y **distancia semántica** (cuánto se aleja la imagen de lo que significa). Los iconos concretos, familiares y con poca distancia semántica se entienden mejor; la familiaridad que da el uso puede compensar con el tiempo un icono abstracto.
+
+**Regla práctica**: los iconos acompañan a una **etiqueta de texto**, salvo los universales en contextos muy conocidos. Si dudas, pon la etiqueta.
+
+## 2. Coherencia de estilo
+
+Un **sistema de iconos** comparte las mismas decisiones de estilo:
+
+- **Rejilla y área de seguridad**: todos se dibujan en la misma rejilla (por ejemplo, 24 × 24 px con un margen interior).
+- **Grosor de trazo** y **terminaciones** (redondeadas o rectas) iguales.
+- **Relleno o contorno**: un estilo para el estado normal y, si se usa, el relleno para el estado seleccionado.
+- **Nivel de detalle** y **perspectiva** iguales.
+- **Ángulos y radios** de las esquinas comunes.
+
+Mezclar iconos de bibliotecas distintas rompe la coherencia aunque cada uno sea correcto. Lo habitual es usar una biblioteca existente (Material Symbols, SF Symbols u otras de licencia libre) y dibujar solo los que falten con sus mismas reglas.
+
+## 3. Legibilidad a distintos tamaños
+
+- Los iconos se diseñan para tamaños concretos (16, 20, 24, 32 px…) y se comprueban a esos tamaños, no ampliados.
+- A tamaños pequeños, los detalles finos desaparecen: se simplifica.
+- El **área táctil** debe ser mayor que el icono: las WCAG 2.2 exigen al menos 24 × 24 px en el nivel AA, y las guías de plataforma recomiendan unos 44-48 px.
+- Los iconos que transmiten información necesitan un contraste de **3:1** con el fondo (Tema 5).
+
+## 4. Neutralidad cultural y de género, y representación inclusiva
+
+- **Metáforas culturales**: el buzón, el cheque o el disquete no significan nada para muchas personas; la mano con el pulgar hacia arriba es ofensiva en algunos lugares. Hay que comprobar las metáforas con el público real.
+- **Dirección**: las flechas de «siguiente» y «atrás» se invierten en idiomas que se escriben de derecha a izquierda.
+- **Género**: para representar «persona» o «usuario», figuras neutras; si se representan personas, diversidad de géneros, edades, tonos de piel y capacidades. Evitar estereotipos (no asociar la cocina solo a mujeres o la herramienta solo a hombres).
+- **Accesibilidad**: cada icono interactivo necesita un **nombre accesible** (lo que lee el lector de pantalla); los iconos decorativos se ocultan a las tecnologías de apoyo.
+
+## Práctica
+
+Busca diez iconos de la aplicación de tu banco o de tu universidad. Tápales la etiqueta y pide a dos personas que digan qué hacen. Anota cuántos aciertan y relaciona los fallos con la concreción y la distancia semántica de McDougall et al.
+
+## Reto evaluable {#reto-t6}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 6 · Sistema de iconos del proyecto
+Para tu proyecto:
+
+1. Haz el **inventario** de los iconos necesarios y decide cuáles llevan etiqueta y por qué.
+2. Elige una **biblioteca** de iconos o define tu propio sistema (rejilla, trazo, terminaciones, relleno) y documenta las reglas.
+3. Haz una prueba rápida de **comprensión** sin etiquetas con tres personas y analiza los resultados.
+4. Revisa la **neutralidad** cultural y de género de los iconos y de las ilustraciones, y define el nombre accesible de cada icono interactivo.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd). Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un proyecto distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. La mayoría de los iconos se entienden igual de bien sin etiqueta de texto. {{< torf false >}}
+2. Cuánto se aleja la imagen de un icono de lo que significa se llama distancia {{< fitb "semántica" "semantica" ignorecase=true >}}
+3. Mezclar iconos de varias bibliotecas, aunque cada uno sea correcto, rompe la {{< mcq "accesibilidad" "*coherencia de estilo" "legibilidad" >}}
+4. El tamaño mínimo del objetivo táctil en el nivel AA de las WCAG 2.2 es de {{< mcq "16 × 16 px" "*24 × 24 px" "64 × 64 px" >}}
+5. ¿Qué necesita un botón que solo muestra un icono?
+
+{{< longmcq "Un color llamativo" "*Un nombre accesible que lea el lector de pantalla" "Una animación" >}}
+
+6. Las flechas de «siguiente» deben invertirse en las interfaces en idiomas que se escriben de derecha a izquierda. {{< torf true >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- Solo unos pocos iconos muy asentados son casi universales.
+- Distancia semántica, una de las cinco características de McDougall et al.
+- Grosores, terminaciones y detalles distintos se notan.
+- Criterio 2.5.8 de las WCAG 2.2; las guías de plataforma recomiendan más.
+- Sin nombre accesible, el lector de pantalla no puede decir qué hace.
+- La dirección de lectura cambia el sentido de «adelante» y «atrás».
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Material Design 3 – Icons](https://m3.material.io/styles/icons/overview) | Sistema de iconos y reglas |
+| [Apple – SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols) | Iconos alineados con el texto |
+| [Nielsen Norman Group – Icon usability](https://www.nngroup.com/articles/icon-usability/) | Investigación sobre iconos y etiquetas |
+| [W3C – Understanding SC 2.5.8: Target size (minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html) | Tamaño de los objetivos |

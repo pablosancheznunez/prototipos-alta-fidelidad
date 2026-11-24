@@ -1,0 +1,197 @@
+---
+engine: markdown
+---
+
+# Tema 4. La tipografía en el diseño de interfaces {#sec-tema4}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Elegir familias tipográficas adecuadas para interfaces.
+- Construir escalas tipográficas y jerarquías coherentes.
+- Ajustar el espaciado, la longitud de línea y el contraste para la legibilidad.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Familia tipográfica](92-glosario.qmd#gl-familia) · [Escala modular](92-glosario.qmd#gl-escala) · [Interlineado](92-glosario.qmd#gl-interlineado) · [Longitud de línea](92-glosario.qmd#gl-longitud) · [Legibilidad](92-glosario.qmd#gl-legibilidad) · [Altura de la x](92-glosario.qmd#gl-altura-x) · [Unidad rem](92-glosario.qmd#gl-rem)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Script R del capítulo](plantillas/04_tipografia.R){.btn .btn-outline-primary .btn-sm download="04_tipografia.R"}
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Dyson, M. C. (2004). [How physical text layout affects reading from screen](https://doi.org/10.1080/01449290410001715714). *Behaviour & Information Technology*, 23(6), 377-393.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Lupton, E. (2024). *Pensar con tipos* (ed. de D. Giménez). Gustavo Gili. Fundamentos de tipografía (bibliografía complementaria de la asignatura).
+- Material Design 3. [Typography](https://m3.material.io/styles/typography/overview). Una escala tipográfica de sistema documentada.
+
+## 1. Elegir la familia tipográfica
+
+En las interfaces, la tipografía es sobre todo **texto que se lee para hacer algo**: etiquetas, botones, mensajes, contenidos. Para elegir una familia conviene comprobar:
+
+- **Legibilidad a tamaños pequeños**: altura de la x generosa (la altura de las minúsculas sin ascendentes), formas abiertas y letras que no se confundan (I, l y 1; O y 0).
+- **Variedad de pesos y estilos** suficiente para construir la jerarquía sin añadir otras familias.
+- **Soporte de idiomas**: todos los caracteres que se necesitan (tildes, eñe, otros alfabetos si hay versiones en otras lenguas).
+- **Rendimiento y licencia**: tipografías del sistema o web con licencia adecuada y un peso de carga razonable.
+
+En la mayoría de los productos bastan **una o dos familias**: una para el texto y, si acaso, otra para los titulares o los datos.
+
+## 2. Escalas y jerarquía
+
+Una **escala modular** fija los tamaños a partir de un tamaño base y una razón constante: cada nivel multiplica el anterior por la razón. Razones habituales: 1,125, 1,2, 1,25, 1,333 o 1,5. Con base de 16 px y razón 1,25 salen 16, 20, 25, 31, 39… Usar una escala evita tamaños arbitrarios y da coherencia.
+
+La jerarquía no se construye solo con el tamaño: también con el **peso** (regular, semibold, bold), el **color** (texto principal y secundario, siempre con contraste suficiente) y el **espacio** alrededor. Un sistema típico tiene pocos estilos con nombre: título de pantalla, título de sección, cuerpo, cuerpo pequeño, etiqueta, botón.
+
+![Escala modular de base 16 px y razón 1,25: cada paso multiplica el anterior por 1,25. Los tamaños se redondean al aplicarlos.](figuras/tema4_escala.svg){#fig-escala fig-alt="Seis líneas de texto «Biblioteca» de tamaño creciente, de 12,8 a 48,8 píxeles, con su tamaño en píxeles y en rem a la izquierda. El tamaño de 16 px aparece marcado como texto base."}
+
+## 3. Espaciado y longitud de línea
+
+- **Interlineado**: para el texto de lectura, en torno a 1,5 veces el tamaño de la letra; los titulares necesitan menos. Las WCAG exigen que el contenido siga funcionando si la persona aumenta el interlineado hasta 1,5 y el espacio entre párrafos hasta 2 veces el tamaño.
+- **Longitud de línea**: Dyson (2004) revisó la investigación sobre la lectura en pantalla y encontró que las líneas largas se leen algo más rápido, pero que las personas prefieren longitudes moderadas. Como regla práctica de diseño se usan de 45 a 75 caracteres por línea para el texto de lectura.
+- **Tamaño**: 16 px es el tamaño de referencia del texto de los navegadores; el texto de lectura no debería ser menor en móvil.
+- **Unidades relativas** (rem): permiten que la interfaz respete el tamaño de letra que la persona ha elegido en su sistema.
+
+## 4. Legibilidad y contraste
+
+La legibilidad depende también del **contraste** con el fondo: las WCAG exigen 4,5:1 para el texto normal y 3:1 para el texto grande (desde 24 px, o 18,66 px en negrita). El texto gris claro sobre blanco, tan frecuente, suele incumplirlo (Tema 5). Hay que evitar además el texto justificado en pantalla (crea huecos irregulares), los textos largos en mayúsculas y el texto sobre imágenes sin una capa que asegure el contraste.
+
+## Práctica en R: escalas tipográficas
+
+`escala_tipografica()` calcula los tamaños de una escala, su equivalente en rem y una altura de línea orientativa:
+
+```{webr}
+#| autorun: true
+source("datos/uxlearn.R")
+escala_tipografica(base = 16, razon = 1.25, pasos = -1:5)
+```
+
+### Ejercicio 4.1 {.unnumbered}
+
+Calcula el tamaño del paso 3 de una escala de base 16 px y razón **1,333** (cuarta justa).
+
+```{webr}
+#| exercise: t4_escala
+#| setup: true
+source("datos/uxlearn.R")
+```
+
+```{webr}
+#| exercise: t4_escala
+e <- escala_tipografica(base = 16, razon = ______, pasos = 0:3)
+e$px[e$paso == 3]
+```
+
+::: {.hint exercise="t4_escala"}
+Escribe la razón con punto decimal: `1.333`.
+:::
+
+::: {.solution exercise="t4_escala"}
+```r
+e <- escala_tipografica(base = 16, razon = 1.333, pasos = 0:3)
+e$px[e$paso == 3]
+```
+37,9 px. Con una razón mayor, la escala crece más deprisa: sirve para interfaces con mucho contraste entre titulares y texto; para interfaces densas se prefieren razones menores.
+:::
+
+```{webr}
+#| exercise: t4_escala
+#| check: true
+if (isTRUE(all.equal(as.numeric(.result), 37.9))) {
+  list(correct = TRUE, message = "Correcto: 16 × 1,333³ ≈ 37,9 px.")
+} else {
+  list(correct = FALSE, message = "Usa razon = 1.333.")
+}
+```
+
+### Ejercicio 4.2 {.unnumbered}
+
+¿Cuántos caracteres caben, aproximadamente, en un bloque de 720 px con letra de 18 px? `caracteres_por_linea()` supone un ancho medio de 0,5 em por carácter. ¿Está dentro del intervalo de 45 a 75?
+
+```{webr}
+#| exercise: t4_linea
+#| setup: true
+source("datos/uxlearn.R")
+```
+
+```{webr}
+#| exercise: t4_linea
+caracteres_por_linea(ancho = ______, tamano = 18)
+```
+
+::: {.hint exercise="t4_linea"}
+El ancho del bloque es 720 px.
+:::
+
+::: {.solution exercise="t4_linea"}
+```r
+caracteres_por_linea(ancho = 720, tamano = 18)
+```
+80 caracteres: algo por encima del intervalo cómodo. Habría que estrechar el bloque o aumentar algo el tamaño.
+:::
+
+```{webr}
+#| exercise: t4_linea
+#| check: true
+if (identical(as.numeric(.result), 80)) {
+  list(correct = TRUE, message = "Correcto: unos 80 caracteres, algo largo.")
+} else {
+  list(correct = FALSE, message = "El ancho es 720.")
+}
+```
+
+## Reto evaluable {#reto-t4}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 4 · Sistema tipográfico del proyecto
+Para tu proyecto:
+
+1. Elige **una o dos familias** y justifica la elección con los criterios del apartado 1 (incluye una prueba de los caracteres confundibles).
+2. Define una **escala modular** con `escala_tipografica()` y los estilos con nombre que usarás (al menos seis), con tamaño, peso, interlineado y uso.
+3. Comprueba la **longitud de línea** del texto de lectura en escritorio y en móvil.
+4. Aplica el sistema a dos pantallas y muestra el antes y el después.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd). Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un proyecto distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. En una escala modular, cada tamaño se obtiene multiplicando el anterior por una razón constante. {{< torf true >}}
+2. Con base 16 px y razón 1,25, el paso 2 mide {{< fitb "25" >}} px.
+3. Para el texto de lectura se suele recomendar una longitud de línea de {{< mcq "20 a 30 caracteres" "*45 a 75 caracteres" "100 a 150 caracteres" >}}
+4. El texto justificado es recomendable en las interfaces porque ordena los márgenes. {{< torf false >}}
+5. ¿Por qué se prefieren las unidades rem para el tamaño del texto?
+
+{{< longmcq "Porque ocupan menos memoria" "*Porque respetan el tamaño de letra que la persona elige en su sistema" "Porque son obligatorias en Figma" >}}
+
+6. Según las WCAG, el texto grande empieza en {{< mcq "16 px" "*24 px (o 18,66 px en negrita)" "48 px" >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- Esa es la definición de escala modular.
+- 16 × 1,25 × 1,25 = 25.
+- Es la regla práctica habitual para la lectura cómoda.
+- Crea huecos irregulares entre palabras que dificultan la lectura.
+- Se escalan con la preferencia de tamaño del sistema o del navegador.
+- El texto grande tiene un mínimo de contraste más bajo (3:1).
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Material Design 3 – Typography](https://m3.material.io/styles/typography/overview) | Escala tipográfica de sistema |
+| [Apple Human Interface Guidelines – Typography](https://developer.apple.com/design/human-interface-guidelines/typography) | Tipografía en las plataformas de Apple |
+| [W3C – Understanding SC 1.4.12: Text spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html) | Espaciado de texto ajustable |
+| [Butterick's Practical Typography](https://practicaltypography.com/) | Guía práctica de tipografía |

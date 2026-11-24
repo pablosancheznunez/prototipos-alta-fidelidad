@@ -1,0 +1,120 @@
+---
+engine: markdown
+---
+
+# Tema 2. Las maquetas en el proceso de diseño {#sec-tema2}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Definir qué es una maqueta y dónde se sitúa entre los esquemas y los prototipos interactivos.
+- Conocer los criterios de calidad de una maqueta estática profesional.
+- Entender el peso de la primera impresión visual en la valoración de una interfaz.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Maqueta](92-glosario.qmd#gl-maqueta) · [Primera impresión](92-glosario.qmd#gl-primera-impresion) · [Contenido real](92-glosario.qmd#gl-contenido-real) · [Caso límite](92-glosario.qmd#gl-limite) · [Efecto de estética-usabilidad](92-glosario.qmd#gl-estetica)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Lindgaard, G.; Fernandes, G.; Dudek, C.; Brown, J. (2006). [Attention web designers: You have 50 milliseconds to make a good first impression!](https://doi.org/10.1080/01449290500330448) *Behaviour & Information Technology*, 25(2), 115-126.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Lidwell, W.; Holden, K.; Butler, J. (2011). *Principios universales de diseño*. Blume. Entrada sobre el efecto de estética-usabilidad (bibliografía complementaria de la asignatura).
+- Tuch, A. N. et al. (2012). [The role of visual complexity and prototypicality regarding first impression of websites](https://doi.org/10.1016/j.ijhcs.2012.06.003). *International Journal of Human-Computer Studies*, 70(11), 794-811. Qué explica la primera impresión.
+
+## 1. Qué es una maqueta
+
+Una **maqueta** (*mockup*) es una representación estática de una pantalla con su aspecto visual definitivo: tipografía, color, imágenes, iconos y contenido real. No tiene interacción. Se sitúa entre el **esquema de página** (estructura sin estilo) y el **prototipo interactivo** (aspecto y comportamiento).
+
+| | Esquema | Maqueta | Prototipo interactivo |
+|---|---|---|---|
+| Estructura | Sí | Sí | Sí |
+| Aspecto visual definitivo | No | Sí | Sí |
+| Interacción | Enlaces básicos | No | Estados, transiciones, microinteracciones |
+| Pregunta que responde | ¿Qué hay y dónde? | ¿Cómo se ve? | ¿Cómo se usa y se siente? |
+
+## 2. Por qué importa el aspecto
+
+Lindgaard et al. (2006) mostraron páginas web durante solo **50 milisegundos** y comprobaron que las valoraciones de atractivo visual eran muy parecidas a las que se daban tras mirarlas más tiempo. La primera impresión visual se forma casi al instante. Tuch et al. (2012) encontraron que las páginas con **baja complejidad visual** y **alta prototipicidad** (que se parecen a lo que se espera de ese tipo de sitio) causan mejor primera impresión.
+
+Además, varios estudios han descrito un **efecto de estética-usabilidad**: las interfaces que se perciben como atractivas tienden a percibirse también como más fáciles de usar. Es una buena noticia para el diseño visual cuidado, y un aviso para las pruebas: una maqueta bonita puede ocultar problemas de uso.
+
+## 3. Criterios de una maqueta profesional
+
+- **Contenido real**: textos, nombres, cifras e imágenes reales o realistas. El texto de relleno oculta los problemas de longitud y de lenguaje.
+- **Casos límite**: el nombre de libro más largo, la lista vacía, el precio con muchos dígitos, la traducción más larga.
+- **Coherencia**: los mismos estilos de texto, colores y componentes en todas las pantallas (base del sistema de diseño, Tema 9).
+- **Accesibilidad visual**: contraste suficiente (Tema 5), tamaños legibles (Tema 4), información que no depende solo del color.
+- **Tamaños reales de dispositivo**: diseñar al tamaño en el que se usará y comprobarlo en un dispositivo, no solo en la pantalla grande del ordenador.
+- **Estados principales** visibles cuando importan (vacío, error), aunque la maqueta sea estática.
+
+## 4. Las maquetas como herramienta de comunicación
+
+Las maquetas sirven para presentar el diseño a quienes deciden, a clientes y al equipo. Para que la conversación sea útil:
+
+- Se presentan **con el flujo y el problema**, no como imágenes sueltas.
+- Se explican las **decisiones** y la evidencia que las respalda.
+- Se dice qué está decidido y **qué está abierto** a comentarios.
+
+## Práctica
+
+Elige dos webs del mismo tipo (por ejemplo, dos catálogos de bibliotecas). Míralas durante un segundo cada una y anota tu primera impresión. Después analiza qué elementos (complejidad, densidad, tipografía, imágenes, parecido con lo esperado) la explican, con los hallazgos de Lindgaard et al. y Tuch et al.
+
+## Reto evaluable {#reto-t2}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 2 · Maqueta de la pantalla principal
+Para la pantalla principal de tu proyecto:
+
+1. Diseña una **maqueta** con contenido real y su versión para móvil.
+2. Diseña al menos **dos casos límite** (contenido largo, lista vacía o similar).
+3. Compárala con la **primera impresión** de dos productos competidores, con los criterios de complejidad y prototipicidad de Tuch et al.
+4. Prepara una **presentación de una página** con el problema, la maqueta, tres decisiones justificadas y una cuestión abierta.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd) con las imágenes de la maqueta. Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un proyecto distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. Una maqueta incluye interacción con estados y transiciones. {{< torf false >}}
+2. Lindgaard et al. (2006) mostraron que las valoraciones de atractivo visual se forman en unos {{< mcq "5 segundos" "*50 milisegundos" "5 minutos" >}}
+3. Según Tuch et al., causan mejor primera impresión las páginas con complejidad visual {{< mcq "*baja" "alta" >}}
+4. Usar texto de relleno («lorem ipsum») en una maqueta ayuda a detectar problemas de longitud de los textos. {{< torf false >}}
+5. ¿Qué describe el efecto de estética-usabilidad?
+
+{{< longmcq "Las interfaces fáciles de usar son siempre más bonitas" "*Las interfaces percibidas como atractivas tienden a percibirse también como más fáciles de usar" "La estética no influye en la valoración de la usabilidad" >}}
+
+6. El nombre de libro más largo del catálogo es un ejemplo de {{< fitb "caso límite" "casos límite" "caso limite" ignorecase=true >}} que la maqueta debe resolver.
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- La maqueta es estática; la interacción llega con el prototipo.
+- 50 ms bastan para una valoración estable del atractivo.
+- Baja complejidad y alta prototipicidad.
+- El relleno oculta precisamente esos problemas.
+- Es una percepción: por eso una maqueta bonita puede ocultar problemas en las pruebas.
+- Los casos límite ponen a prueba el diseño con el contenido más difícil.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Nielsen Norman Group – The aesthetic-usability effect](https://www.nngroup.com/articles/aesthetic-usability-effect/) | El efecto explicado con ejemplos |
+| [Figma Community](https://www.figma.com/community) | Kits y maquetas de referencia |
+| [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/) | Criterios de las plataformas de Apple |
+| [Material Design 3](https://m3.material.io/) | Criterios de Google |

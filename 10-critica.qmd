@@ -1,0 +1,119 @@
+---
+engine: markdown
+---
+
+# Tema 10. Críticas de diseño {#sec-tema10}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Preparar y presentar un diseño para una crítica.
+- Formular y recibir comentarios útiles.
+- Gestionar la retroalimentación y convertirla en decisiones.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Crítica de diseño](92-glosario.qmd#gl-critica) · [Retroalimentación accionable](92-glosario.qmd#gl-accionable) · [Facilitación](92-glosario.qmd#gl-facilitacion) · [Objetivo de la crítica](92-glosario.qmd#gl-objetivo-critica) · [Registro de comentarios](92-glosario.qmd#gl-registro-comentarios)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Dannels, D. P.; Martin, K. N. (2008). [Critiquing critiques: A genre analysis of feedback across novice to expert design studios](https://doi.org/10.1177/1050651907311923). *Journal of Business and Technical Communication*, 22(2), 135-159.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Nielsen Norman Group. [Design critiques: Encourage a positive culture to improve products](https://www.nngroup.com/articles/design-critiques/). Guía práctica para el trabajo en equipo.
+- Buxton, W. (2007). *Sketching user experiences*. Elsevier. El papel de la crítica en el proceso de diseño.
+
+## 1. Qué es una crítica de diseño
+
+Una **crítica de diseño** (*design crit*) es una sesión en la que un equipo analiza un diseño en curso para mejorarlo. No es una votación ni una aprobación: su objetivo es **entender si el diseño cumple sus objetivos** y descubrir problemas a tiempo. Dannels y Martin (2008) analizaron las críticas en estudios de diseño, desde principiantes hasta expertos, y las describieron como un género de comunicación propio, con distintos formatos (críticas en la mesa de trabajo, en grupo, ante un tribunal) y con convenciones que hay que aprender.
+
+## 2. Preparar y presentar
+
+Quien presenta debe dar el contexto para que los comentarios sean útiles:
+
+1. **El problema y las personas usuarias**: para quién y qué se quiere resolver.
+2. **Los objetivos** del diseño (del *brief*).
+3. **El punto del proceso**: exploración temprana o detalle final; no se critica igual.
+4. **El objetivo de la crítica**: qué se quiere que se comente («¿se entiende la jerarquía de la pantalla de resultados?») y qué no («los colores son provisionales»).
+5. **El diseño**, recorriendo el flujo, no imágenes sueltas.
+
+## 3. Dar comentarios útiles
+
+Un comentario útil es **específico**, **relacionado con los objetivos** y **accionable**. Un esquema sencillo para formularlo:
+
+> «Si el objetivo es **[objetivo]**, me preocupa que **[elemento]** porque **[motivo]**. ¿Habéis pensado en **[pregunta o alternativa]**?»
+
+| Poco útil | Útil |
+|---|---|
+| «No me gusta el azul.» | «Si el objetivo es que la reserva sea la acción principal, el botón azul compite con la cabecera del mismo color. ¿Y si la cabecera fuera neutra?» |
+| «Está muy cargado.» | «En la pantalla de resultados hay siete elementos con el mismo peso visual; no sé qué mirar primero.» |
+
+Se critica el **diseño**, no a la persona; se empieza por **preguntas** antes que por soluciones; y se separan los gustos personales de los problemas respecto a los objetivos.
+
+## 4. Recibir y gestionar la retroalimentación
+
+- **Escuchar sin defenderse**: preguntar para entender el comentario, no para rebatirlo.
+- **Registrar** todos los comentarios: quién, sobre qué, qué problema plantea.
+- **Priorizar** después, con calma: frecuencia, gravedad y relación con los objetivos.
+- **Decidir y comunicar**: qué se cambia, qué no y por qué, y con qué evidencia (enlazando con el registro de decisiones del Tema 3).
+
+Un **facilitador** ayuda a que la sesión cumpla su objetivo: controla el tiempo, reconduce los comentarios de gusto, da la palabra a todos y resume las conclusiones.
+
+## Práctica
+
+En grupos de tres, cada persona presenta durante cinco minutos una pantalla de su proyecto siguiendo el guion del apartado 2. Las otras dos dan tres comentarios cada una con el esquema del apartado 3. Rotad los papeles de quien presenta, quien comenta y quien facilita.
+
+## Reto evaluable {#reto-t10}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 10 · Crítica documentada
+Con el prototipo de tu proyecto:
+
+1. Prepara la **presentación** de una crítica con el guion del apartado 2, incluido el objetivo de la crítica.
+2. Participa en una crítica con compañeros y lleva un **registro de comentarios** (al menos diez).
+3. **Prioriza** los comentarios y decide qué cambias y qué no, con su justificación.
+4. Muestra los **cambios** realizados y reflexiona sobre qué comentarios fueron más útiles y por qué.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd). No incluyas datos personales de quienes comentan. Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un proyecto distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. El objetivo de una crítica de diseño es votar qué versión gusta más. {{< torf false >}}
+2. «No me gusta el azul» es un comentario accionable. {{< torf false >}}
+3. Antes de la crítica, quien presenta debe indicar qué quiere que se comente y qué no: el {{< mcq "registro de decisiones" "*objetivo de la crítica" "brief" >}}
+4. Al recibir un comentario, lo primero es {{< mcq "defender la decisión tomada" "*preguntar para entenderlo" "aplicarlo de inmediato" >}}
+5. ¿Qué papel controla el tiempo, reconduce los comentarios de gusto y resume las conclusiones? {{< fitb "facilitador" "facilitadora" "facilitación" ignorecase=true >}}
+6. ¿Qué tienen en común los comentarios útiles?
+
+{{< longmcq "Son breves y positivos" "*Son específicos, relacionados con los objetivos y accionables" "Proponen siempre una solución concreta" >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- Se trata de comprobar si el diseño cumple sus objetivos.
+- Expresa un gusto, no un problema respecto a un objetivo.
+- Orienta los comentarios hacia lo que necesita quien presenta.
+- Escuchar sin defenderse y preguntar para entender.
+- El facilitador ayuda a que la sesión cumpla su objetivo.
+- Mejor empezar por preguntas que por soluciones.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Nielsen Norman Group – Design critiques](https://www.nngroup.com/articles/design-critiques/) | Cómo organizar las críticas |
+| [Interaction Design Foundation – Design critique](https://ixdf.org/literature/topics/design-critique) | Introducción |

@@ -1,0 +1,127 @@
+---
+engine: markdown
+---
+
+# Tema 3. De la baja a la alta fidelidad {#sec-tema3}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Hacer evolucionar los prototipos de baja a alta fidelidad sin perder la intención del diseño.
+- Mantener la trazabilidad de las decisiones.
+- Diseñar microinteracciones para los prototipos interactivos.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario del tema
+[Trazabilidad](92-glosario.qmd#gl-trazabilidad) · [Intención del diseño](92-glosario.qmd#gl-intencion) · [Microinteracción](92-glosario.qmd#gl-microinteraccion) · [Disparador](92-glosario.qmd#gl-disparador) · [Retroalimentación](92-glosario.qmd#gl-retroalimentacion) · [Registro de decisiones](92-glosario.qmd#gl-registro)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Virzi, R. A.; Sokolov, J. L.; Karis, D. (1996). [Usability problem identification using both low- and high-fidelity prototypes](https://doi.org/10.1145/238386.238516). En *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '96)* (pp. 236-243). ACM.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Saffer, D. (2013). *Microinteractions: Designing with details*. O'Reilly. El modelo de cuatro partes de este tema (bibliografía complementaria de la asignatura).
+- Buxton, W. (2007). *Sketching user experiences*. Elsevier. El paso del boceto al prototipo.
+
+## 1. Qué se conserva y qué cambia
+
+Virzi, Sokolov y Karis (1996) compararon los problemas de usabilidad detectados con prototipos de baja y de alta fidelidad y encontraron que ambos los detectan en gran medida por igual. Eso tiene una consecuencia práctica: lo validado en baja fidelidad (estructura, flujo, contenido, jerarquía) es una base sólida que **no debe perderse** al pulir el aspecto.
+
+| Se conserva de la baja fidelidad | Se decide en la alta fidelidad |
+|---|---|
+| Flujos y pantallas | Tipografía, color, iconos |
+| Jerarquía: qué es lo más importante | Cómo se expresa visualmente esa jerarquía |
+| Etiquetas y contenido validados | Ajustes de redacción según el espacio real |
+| Estados identificados | Diseño detallado de cada estado y microinteracción |
+
+## 2. Estrategias para subir la fidelidad
+
+- **Por capas**: primero la tipografía y el espaciado sobre el esquema, después el color, después los iconos e imágenes. Cada capa se revisa antes de añadir la siguiente.
+- **Por pantallas clave**: llevar a alta fidelidad una o dos pantallas representativas, extraer de ellas los estilos y componentes, y aplicarlos al resto (lo que da origen al sistema de diseño, Tema 9).
+- **Fidelidad mixta**: alta fidelidad solo donde la pregunta lo exige (la pantalla de pago) y baja en el resto.
+
+## 3. Trazabilidad de las decisiones
+
+Al pulir, es fácil que una decisión visual contradiga, sin querer, una decisión validada: un botón principal que pierde protagonismo porque «quedaba mejor» en gris, una etiqueta que se acorta y deja de entenderse. La **trazabilidad** consiste en poder explicar de dónde viene cada decisión. Un **registro de decisiones** sencillo ayuda:
+
+| Fecha | Decisión | Motivo | Evidencia | Pantallas afectadas |
+|---|---|---|---|---|
+| 12/02 | El horario pasa a la cabecera | 4 de 6 lo buscaban en «Contacto» | Prueba en papel, ronda 2 | Todas |
+| 19/02 | Botón «Reservar» en color primario sólido | Acción principal del flujo | Jerarquía validada en esquemas | Lista y ficha de sala |
+
+## 4. Microinteracciones
+
+Una **microinteracción** es un momento de interacción con un solo propósito: marcar un favorito, activar un ajuste, recibir la confirmación de una reserva. Saffer (2013) describe cuatro partes:
+
+1. **Disparador**: lo que la inicia (una acción de la persona o una condición del sistema).
+2. **Reglas**: qué ocurre y en qué orden.
+3. **Retroalimentación**: cómo se comunica lo que está pasando (visual, sonora, táctil).
+4. **Bucles y modos**: qué cambia si se repite o si hay estados distintos.
+
+| Parte | Ejemplo: «Añadir a mi lista de lecturas» |
+|---|---|
+| Disparador | Pulsar el icono de marcador en la ficha del libro |
+| Reglas | Si hay sesión, se añade; si no, se pide iniciarla y después se añade |
+| Retroalimentación | El icono pasa a relleno y aparece «Añadido a tu lista» con opción «Deshacer» |
+| Bucles y modos | Pulsar de nuevo lo quita; el estado se mantiene al volver a la ficha |
+
+Las animaciones de las microinteracciones deben ser breves y útiles, y respetar la preferencia de **movimiento reducido** del sistema: algunas personas sufren mareos o pierden la concentración con el movimiento (criterio de las WCAG sobre animaciones de interacción).
+
+## Práctica
+
+Toma una pantalla de un prototipo de baja fidelidad tuyo. Súbela a alta fidelidad por capas (tipografía, color, iconos) y, en cada capa, comprueba con su esquema original que la jerarquía no ha cambiado.
+
+## Reto evaluable {#reto-t3}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto del Tema 3 · Evolución trazable y microinteracción
+Para tu proyecto:
+
+1. Lleva a alta fidelidad **dos pantallas** del flujo principal partiendo de sus esquemas, mostrando las capas intermedias.
+2. Mantén un **registro de decisiones** con al menos seis entradas, cada una con su evidencia.
+3. Diseña **una microinteracción** clave con las cuatro partes de Saffer y prototípala, incluida su versión con movimiento reducido.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd) con las imágenes y el enlace al prototipo. Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un proyecto distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. Según Virzi et al., los prototipos de baja fidelidad detectan muchos menos problemas que los de alta. {{< torf false >}}
+2. Al subir la fidelidad, la jerarquía de la información validada en los esquemas debe {{< mcq "rehacerse desde cero" "*conservarse" "decidirse de nuevo según la estética" >}}
+3. En el modelo de Saffer, pulsar el icono de marcador es el {{< fitb "disparador" "trigger" ignorecase=true >}} de la microinteracción.
+4. El cambio del icono a relleno con el mensaje «Añadido a tu lista» es la {{< mcq "regla" "*retroalimentación" "bucle" >}}
+5. Las animaciones de interacción deben respetar la preferencia de movimiento reducido del sistema. {{< torf true >}}
+6. ¿Para qué sirve el registro de decisiones?
+
+{{< longmcq "Para documentar las horas dedicadas" "*Para poder explicar de dónde viene cada decisión y no contradecir sin querer lo ya validado" "Para sustituir las pruebas con usuarios" >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- Detectaron problemas en gran medida similares.
+- Lo validado es la base: el aspecto visual la expresa, no la sustituye.
+- El disparador inicia la microinteracción.
+- La retroalimentación comunica lo que ha pasado.
+- Algunas personas sufren mareos con el movimiento.
+- La trazabilidad protege las decisiones validadas.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [W3C – Understanding SC 2.3.3: Animation from interactions](https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html) | Animaciones y movimiento reducido |
+| [Nielsen Norman Group – Microinteractions in user experience](https://www.nngroup.com/articles/microinteractions/) | Ejemplos de microinteracciones |
+| [Figma – Guide to prototyping](https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma) | Interacciones y animaciones en prototipos |
