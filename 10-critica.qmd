@@ -73,6 +73,35 @@ Un **facilitador** ayuda a que la sesión cumpla su objetivo: controla el tiempo
 
 En grupos de tres, cada persona presenta durante cinco minutos una pantalla de su proyecto siguiendo el guion del apartado 2. Las otras dos dan tres comentarios cada una con el esquema del apartado 3. Rotad los papeles de quien presenta, quien comenta y quien facilita.
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Una sesión de crítica bien conducida
+Se presenta la pantalla de reserva al equipo. Estructura de la crítica:
+
+1. **Contexto (2 min):** objetivo de la pantalla, usuario y fase del proyecto.
+2. **Qué tipo de comentarios se buscan:** jerarquía y claridad de la acción; no el color de marca, que ya está decidido.
+3. **Comentarios** en forma de observación + impacto + pregunta: «La barra de disponibilidad y el botón compiten; ¿cuál debe mirarse primero?».
+4. **Cierre:** resumen de decisiones y próximos pasos.
+
+Lo que se evita: «No me gusta», soluciones impuestas sin entender el problema y debates sobre gustos personales.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Reformula este comentario como una crítica útil: «El botón es feo».
+
+::: {.webex-solution boton="Ver solución"}
+Ejemplo: «El botón de reservar tiene poco contraste con el fondo y se confunde con el de cancelar; puede que el usuario dude cuál es la acción principal. ¿Qué pasaría si fuera relleno y el otro de contorno?».
+:::
+
+**Avanzado.** Prepara la presentación de un diseño tuyo para una crítica de diez minutos.
+
+::: {.webex-solution boton="Ver solución"}
+Incluye objetivo, usuario, restricciones, qué está decidido, qué buscas que comenten y dos preguntas concretas para el equipo.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t10a-comentarios titulo="¿Es un comentario útil en una crítica?" categorias="Útil|Poco útil"}

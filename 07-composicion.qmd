@@ -169,6 +169,35 @@ viewof a_ancho = rango("Ancho de la ventana (px)", [320, 1440], {step: 8, value:
 ```
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Componer la pantalla de detalle de sala
+La pantalla de detalle tiene: foto, nombre, capacidad, equipamiento, barra de disponibilidad y botón de reserva. Primera composición: todos los elementos con el mismo peso visual; la mirada no sabe dónde ir.
+
+Recomposición con principios Gestalt y jerarquía:
+
+- **Proximidad:** capacidad y equipamiento agrupados en un bloque «Características».
+- **Contraste y tamaño:** la barra de disponibilidad es el elemento más grande tras la foto, porque es la decisión clave.
+- **Alineación** a una retícula de 4 columnas en móvil.
+- **Acción principal** fija en la parte inferior, al alcance del pulgar.
+:::
+
+## Ejercicios graduados
+
+**Básico.** ¿Qué principio Gestalt se aplica al agrupar capacidad y equipamiento en un bloque?
+
+::: {.webex-solution boton="Ver solución"}
+Proximidad (y región común si se encierran en un contenedor).
+:::
+
+**Avanzado.** Dibuja la versión de escritorio de la pantalla de detalle sobre una retícula de 12 columnas.
+
+::: {.webex-solution boton="Ver solución"}
+Por ejemplo: foto en 7 columnas a la izquierda, información y reserva en 5 columnas a la derecha, con la disponibilidad junto al botón. La jerarquía debe ser la misma que en móvil.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t7a-gestalt titulo="¿Qué principio de la Gestalt se aplica?" categorias="Proximidad|Semejanza|Cierre|Continuidad|Región común"}

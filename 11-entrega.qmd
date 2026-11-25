@@ -76,6 +76,37 @@ Toma una pantalla de tu proyecto y pide a un compañero que la «construya» des
 
 ![Una pantalla anotada para el traspaso: medidas, *tokens* y estados.](figuras/t11_especificacion.svg){#fig-t11-especificacion fig-alt="Una tarjeta «Renovar préstamo» con un botón azul. Cotas en rojo indican un ancho de 320 píxeles, un margen de 24 y una altura de botón de 44 píxeles. Tres notas a la derecha: título 20/28 px semibold con color-texto-principal; botón con boton-primario y radio-control de 8 px; estados reposo, foco, pulsado, cargando y error."}
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Entrega a desarrollo sin ambigüedades
+Paquete de entrega de la pantalla de reserva:
+
+- **Especificaciones:** medidas, tokens usados, comportamiento en distintos tamaños.
+- **Estados:** cargando, vacío, error, éxito y desactivado de cada componente.
+- **Interacciones:** qué pasa al pulsar, duración de las animaciones, gestos.
+- **Accesibilidad:** orden de foco, textos alternativos, etiquetas para lectores de pantalla, contraste comprobado.
+- **Contenido:** textos finales, mensajes de error y su tono.
+- **Casos límite:** nombres largos, sin conexión, sesión caducada.
+
+Una reunión breve de traspaso y un canal para dudas evitan que desarrollo «rellene huecos» con decisiones propias.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Enumera cinco casos límite de la pantalla de reserva que deberían especificarse.
+
+::: {.webex-solution boton="Ver solución"}
+Sin conexión; sala ocupada mientras se confirma; nombre de sala muy largo; usuario sin permisos (por ejemplo, de otra universidad); reserva en la franja que ya ha empezado.
+:::
+
+**Avanzado.** Redacta la especificación completa de la barra de disponibilidad (aspecto, estados, interacción y accesibilidad).
+
+::: {.webex-solution boton="Ver solución"}
+Debe incluir tamaño y tokens, cómo se representan las horas libres y ocupadas (no solo con color), qué pasa al pulsar una franja, cómo se anuncia a un lector de pantalla («Libre de 16:00 a 18:00») y cómo se comporta en pantallas estrechas.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t11a-espec titulo="¿Debe ir en la especificación?" categorias="Sí|No hace falta"}

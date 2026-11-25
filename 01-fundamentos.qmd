@@ -81,6 +81,30 @@ Toma uno de los prototipos de baja fidelidad que hiciste en la asignatura anteri
 
 ![Qué preguntas puede responder cada nivel de fidelidad.](figuras/t1_decisiones.svg){#fig-t1-decisiones fig-alt="Tabla con cinco preguntas y dos columnas, baja y alta fidelidad. La baja valida si encuentran la función y si entienden el flujo; no valida si se lee bien el texto, si la marca transmite confianza ni si la respuesta se percibe rápida. La alta valida las cinco."}
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Cuándo pasar a alta fidelidad
+El esquema de ReservaSala ya se ha probado en papel y el flujo funciona. Ahora la biblioteca necesita: (a) comprobar si el aspecto transmite confianza institucional, (b) medir tiempos reales de reserva y (c) entregar especificaciones a desarrollo. Las tres cosas exigen **alta fidelidad**: aspecto visual real, contenido real e interacción realista.
+
+Lo que **no** conviene hacer todavía en alta fidelidad: explorar alternativas de estructura. Si aparece una duda de flujo, se vuelve a baja fidelidad: es más barato.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Indica para cada objetivo si basta la baja fidelidad o necesitas la alta: comparar tres estructuras de navegación; medir si el contraste del botón principal es suficiente; presentar el diseño final a la dirección.
+
+::: {.webex-solution boton="Ver solución"}
+Estructuras: baja. Contraste: alta (depende del color real). Presentación final: alta (comunica el resultado a quien no participó en el proceso).
+:::
+
+**Avanzado.** Diseña un plan de prueba con un prototipo de alta fidelidad que mida el tiempo de reserva.
+
+::: {.webex-solution boton="Ver solución"}
+Tareas realistas, cinco a ocho participantes, registro del tiempo desde el inicio hasta la confirmación, tasa de éxito y errores, y una escala de satisfacción (por ejemplo, SUS) al final.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t1a-tipo titulo="¿Qué tipo de prototipo de alta fidelidad es?" categorias="Maqueta estática|Prototipo navegable|Prototipo en código"}

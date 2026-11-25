@@ -98,6 +98,30 @@ viewof d_sep = rango("Separación entre elementos (px)", [0, 24], {step: 2, valu
 ```
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Más espacio, más claridad
+La pantalla de inicio de ReservaSala intenta mostrar a la vez noticias de la biblioteca, salas favoritas, reservas activas y un buscador. Con márgenes de 8 px todo parece un bloque compacto.
+
+Rediseño: escala de espaciado de 8 px (8, 16, 24, 32, 48), márgenes laterales de 16 px, 32 px entre secciones y eliminación de las noticias (que van a otra sección). La pantalla muestra menos, pero se entiende antes: la reserva activa y el buscador destacan solos.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Indica qué valor de la escala de 8 px usarías entre una etiqueta y su campo, entre campos y entre secciones.
+
+::: {.webex-solution boton="Ver solución"}
+Etiqueta-campo: 8 px. Entre campos: 16 o 24 px. Entre secciones: 32 o 48 px. La relación entre espacios comunica qué está relacionado.
+:::
+
+**Avanzado.** Rediseña una pantalla saturada de una app que uses a diario aplicando la escala de espaciado.
+
+::: {.webex-solution boton="Ver solución"}
+Documenta antes y después, explica qué elementos eliminaste o reagrupaste y por qué, y cómo cambia la jerarquía.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t8a-tipo titulo="¿Macroespacio o microespacio?" categorias="Macroespacio|Microespacio"}

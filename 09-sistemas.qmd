@@ -129,6 +129,34 @@ viewof tokens_txt = area("Tokens (JSON)", {rows: 9, submit: "Aplicar", value: `{
 **Prueba:** cambia `color-accion` a `#2a78d6`. El botón sigue siendo legible con texto blanco, pero ¿cumple 4,5:1?
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Del diseño suelto a un sistema
+En la tercera iteración hay cuatro variantes del botón principal con radios y alturas distintas. Se crea un sistema mínimo:
+
+- **Tokens:** `color.primario`, `color.exito`, `espacio.2` (16 px), `radio.m` (8 px), `fuente.texto` (16 px).
+- **Componentes:** botón (primario, secundario, texto; estados normal, foco, desactivado, cargando), fila de sala, barra de disponibilidad, tarjeta de reserva.
+- **Documentación:** cuándo usar cada variante, accesibilidad (foco visible, contraste) y ejemplos de uso incorrecto.
+
+Al cambiar un token (por ejemplo, el color primario para adaptarlo a la marca de la universidad), todas las pantallas se actualizan de forma coherente.
+:::
+
+## Ejercicios graduados
+
+**Básico.** ¿Qué estados mínimos debe documentar un botón?
+
+::: {.webex-solution boton="Ver solución"}
+Normal, *hover* (en escritorio), foco (visible para teclado), pulsado, desactivado y cargando. Cada uno con su especificación de color y contraste.
+:::
+
+**Avanzado.** Define los tokens de color de ReservaSala en modo claro y oscuro con nombres semánticos.
+
+::: {.webex-solution boton="Ver solución"}
+Nombres por función (`fondo`, `superficie`, `texto`, `texto-secundario`, `primario`, `exito`, `error`, `borde`), no por color («verde»), con valores para cada modo y contraste comprobado en ambos.
+:::
+
+
 ## Actividades
 
 ::: {.ordenar #ia-t9a-atomico titulo="Los niveles del diseño atómico (Frost, 2016), de menor a mayor"}

@@ -71,6 +71,30 @@ Las maquetas sirven para presentar el diseño a quienes deciden, a clientes y al
 
 Elige dos webs del mismo tipo (por ejemplo, dos catálogos de bibliotecas). Míralas durante un segundo cada una y anota tu primera impresión. Después analiza qué elementos (complejidad, densidad, tipografía, imágenes, parecido con lo esperado) la explican, con los hallazgos de Lindgaard et al. y Tuch et al.
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Maqueta con contenido real
+La primera maqueta de la lista de salas usa nombres como «Sala 1, Sala 2» y horas inventadas. Al poner **contenido real** (nombres como «Sala de trabajo en grupo 2.14 — Biblioteca de Getafe», horarios reales con huecos irregulares), aparecen problemas: los nombres largos rompen la fila y las franjas libres no caben.
+
+Soluciones: abreviar en la lista y mostrar el nombre completo en el detalle; representar la disponibilidad con una barra horaria compacta en lugar de texto. Lección: el *lorem ipsum* oculta problemas de diseño.
+:::
+
+## Ejercicios graduados
+
+**Básico.** Enumera tres tipos de contenido real que suelen romper una maqueta.
+
+::: {.webex-solution boton="Ver solución"}
+Textos largos (nombres, traducciones al inglés, que suelen ocupar más), números grandes o con decimales y listas vacías o muy largas. También fotos con proporciones distintas.
+:::
+
+**Avanzado.** Rediseña la fila de sala para que funcione con nombres de 20 a 70 caracteres.
+
+::: {.webex-solution boton="Ver solución"}
+Por ejemplo: nombre en dos líneas como máximo con elipsis, código de sala destacado, capacidad e iconos en una segunda línea y la barra de disponibilidad debajo; el detalle muestra el nombre completo.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t2a-criterios titulo="¿Cumple los criterios de una maqueta profesional?" categorias="Cumple|No cumple"}

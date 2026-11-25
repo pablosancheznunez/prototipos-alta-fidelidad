@@ -123,6 +123,36 @@ viewof estado_boton = seleccion("Estado forzado", [["reposo", "Reposo (interacti
 ```
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Del esquema a la pantalla final, decisión a decisión
+Paso del esquema de confirmación a alta fidelidad:
+
+1. **Jerarquía:** el título «Reserva confirmada» pasa a 24 px seminegrita; los datos de la reserva, a 16 px.
+2. **Color:** el verde se reserva para el estado de éxito; la acción secundaria («Cancelar») va en contorno.
+3. **Iconografía:** iconos de calendario, reloj y ubicación junto a cada dato, siempre con texto.
+4. **Espaciado:** escala de 8 px; 24 px entre bloques, 8 px dentro de cada bloque.
+5. **Microinteracción:** al confirmar, una animación breve (≤ 300 ms) que respeta la preferencia de reducir el movimiento.
+
+Cada decisión se registra en la documentación para que desarrollo no tenga que adivinar.
+:::
+
+## Ejercicios graduados
+
+**Básico.** ¿Qué elementos del esquema no deberían cambiar al pasar a alta fidelidad?
+
+::: {.webex-solution boton="Ver solución"}
+La estructura, la jerarquía de la información y el flujo validados. La alta fidelidad añade aspecto y detalle; si cambia la estructura, hay que volver a probarla.
+:::
+
+**Avanzado.** Escribe la ficha de decisiones (jerarquía, color, iconos, espaciado, movimiento) para la pantalla de lista de salas.
+
+::: {.webex-solution boton="Ver solución"}
+Debe justificar cada decisión con un principio (contraste, consistencia, escala de espaciado, accesibilidad) y especificar valores concretos que desarrollo pueda aplicar.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t3a-cambia titulo="¿Se conserva o cambia al subir la fidelidad?" categorias="Se conserva|Cambia"}

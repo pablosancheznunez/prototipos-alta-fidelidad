@@ -202,6 +202,34 @@ viewof c_fondo = color("Color del fondo", {value: "#ffffff"})
 ```
 :::
 
+## Caso práctico resuelto
+
+::: {.callout-note appearance="simple" icon="false"}
+## Colores que cumplen WCAG
+Paleta inicial: botón verde claro (#6BCB77) con texto blanco. Comprobación de contraste: alrededor de 2:1, **no cumple** el mínimo de 4,5:1 para texto normal (WCAG 2.1 AA).
+
+Solución: oscurecer el verde hasta superar 4,5:1 con texto blanco, o usar texto oscuro sobre el verde claro. Además:
+
+- La disponibilidad no se indica solo con color: «Libre» / «Ocupada» en texto e icono.
+- Se comprueba la paleta con simuladores de daltonismo (protanopia, deuteranopia).
+- El modo oscuro tiene su propia paleta, comprobada de nuevo, no una inversión automática.
+:::
+
+## Ejercicios graduados
+
+**Básico.** ¿Qué contraste mínimo exige WCAG 2.1 AA para texto normal y para texto grande?
+
+::: {.webex-solution boton="Ver solución"}
+4,5:1 para texto normal y 3:1 para texto grande (unos 24 px, o 18,5 px en negrita). Los componentes de interfaz y gráficos necesitan 3:1 con su entorno.
+:::
+
+**Avanzado.** Diseña la leyenda de disponibilidad de salas para que funcione en escala de grises.
+
+::: {.webex-solution boton="Ver solución"}
+Combinar color con texto («Libre», «Pocas horas», «Ocupada»), iconos distintos y, si se usan barras, patrones o rellenos diferentes. Comprobarlo convirtiendo la pantalla a grises.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-t5a-wcag titulo="¿Qué contraste mínimo exige el nivel AA?" categorias="4,5:1|3:1|Sin requisito"}
