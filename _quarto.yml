@@ -55,6 +55,7 @@ book:
         - 10-critica.qmd
         - 11-entrega.qmd
   appendices:
+    - 93-laboratorio-visual.qmd
     - 90-uxlearn.qmd
     - 91-guia-docente.qmd
     - 92-glosario.qmd

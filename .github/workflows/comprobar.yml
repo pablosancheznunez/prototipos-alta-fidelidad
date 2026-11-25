@@ -43,18 +43,18 @@ jobs:
         run: python herramientas/pruebas/ejercicios.py . 60 00-r-en-el-libro.qmd 04-tipografia.qmd 05-color.qmd 07-composicion.qmd
 
       - name: Preguntas de autoevaluación
-        run: python herramientas/pruebas/autoevaluacion.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-maquetas.html 03-transicion.html 04-tipografia.html 05-color.html 06-iconografia.html 07-composicion.html 08-espacio.html 09-sistemas.html 10-critica.html 11-entrega.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
+        run: python herramientas/pruebas/autoevaluacion.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-maquetas.html 03-transicion.html 04-tipografia.html 05-color.html 06-iconografia.html 07-composicion.html 08-espacio.html 09-sistemas.html 10-critica.html 11-entrega.html 93-laboratorio-visual.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
 
       - name: Accesibilidad (axe-core, WCAG 2.1 AA)
         env:
           AXE_JS: node_modules/axe-core/axe.min.js
-        run: python herramientas/pruebas/accesibilidad.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-maquetas.html 03-transicion.html 04-tipografia.html 05-color.html 06-iconografia.html 07-composicion.html 08-espacio.html 09-sistemas.html 10-critica.html 11-entrega.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
+        run: python herramientas/pruebas/accesibilidad.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-maquetas.html 03-transicion.html 04-tipografia.html 05-color.html 06-iconografia.html 07-composicion.html 08-espacio.html 09-sistemas.html 10-critica.html 11-entrega.html 93-laboratorio-visual.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
 
       - name: Accesibilidad en modo oscuro
         env:
           AXE_JS: node_modules/axe-core/axe.min.js
           MODO: oscuro
-        run: python herramientas/pruebas/accesibilidad.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-maquetas.html 03-transicion.html 04-tipografia.html 05-color.html 06-iconografia.html 07-composicion.html 08-espacio.html 09-sistemas.html 10-critica.html 11-entrega.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
+        run: python herramientas/pruebas/accesibilidad.py _book index.html 00-r-en-el-libro.html 01-fundamentos.html 02-maquetas.html 03-transicion.html 04-tipografia.html 05-color.html 06-iconografia.html 07-composicion.html 08-espacio.html 09-sistemas.html 10-critica.html 11-entrega.html 93-laboratorio-visual.html 90-uxlearn.html 91-guia-docente.html 92-glosario.html
 
       - uses: actions/upload-artifact@v4
         if: always()
