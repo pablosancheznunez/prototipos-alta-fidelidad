@@ -1,0 +1,220 @@
+---
+engine: markdown
+---
+
+# Biblioteca de componentes {#sec-componentes}
+
+En alta fidelidad cada componente se diseña con **todos sus estados** y con su comportamiento de teclado y lector de pantalla. Este apéndice muestra seis componentes de ReservaSala **funcionando**: pruébalos con el ratón, con el teclado (Tab, Espacio, Intro, flechas, Escape) y, si puedes, con un lector de pantalla. El botón, con sus seis estados, está en el [laboratorio de diseño visual](93-laboratorio-visual.qmd).
+
+```{=html}
+<style>
+.cm-demo{border:1px solid var(--bs-border-color);border-radius:12px;padding:1rem 1.25rem;margin:1rem 0}
+.cm-campo label{display:block;font-weight:600;margin-bottom:.25rem}
+.cm-campo input{width:100%;max-width:340px;font:inherit;padding:.6rem .75rem;border:1.5px solid #6b6a66;border-radius:8px;background:var(--bs-body-bg);color:var(--bs-body-color)}
+.cm-campo input:focus-visible{outline:3px solid #2a78d6;outline-offset:2px}
+.cm-campo .ayuda{font-size:.875rem;color:var(--bs-secondary-color);margin-top:.25rem}
+.cm-campo.error input{border-color:#b3261e}
+.cm-campo.error .ayuda{color:#b3261e}
+.quarto-dark .cm-campo.error input{border-color:#f2b8b5}.quarto-dark .cm-campo.error .ayuda{color:#f2b8b5}
+.cm-campo input:disabled{background:var(--bs-secondary-bg);color:var(--bs-secondary-color);cursor:not-allowed}
+.cm-estados{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+.cm-estados .cm-campo input{max-width:none}
+.cm-forzar-foco input{outline:3px solid #2a78d6;outline-offset:2px}
+.cm-switch{display:inline-flex;align-items:center;gap:.6rem;background:none;border:0;padding:.25rem;font:inherit;color:inherit;cursor:pointer}
+.cm-switch .pista{width:44px;height:26px;border-radius:13px;background:#6b6a66;position:relative;transition:background-color .15s}
+.cm-switch .pista::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:transform .15s}
+.cm-switch[aria-checked="true"] .pista{background:#1c6b3a}
+.cm-switch[aria-checked="true"] .pista::after{transform:translateX(18px)}
+.cm-switch:focus-visible{outline:3px solid #2a78d6;outline-offset:2px;border-radius:6px}
+.cm-tabs [role=tablist]{display:flex;gap:.25rem;border-bottom:1px solid var(--bs-border-color)}
+.cm-tabs [role=tab]{font:inherit;background:none;border:0;border-bottom:3px solid transparent;padding:.5rem .9rem;color:inherit;cursor:pointer}
+.cm-tabs [role=tab][aria-selected=true]{border-bottom-color:#2a78d6;font-weight:600}
+.cm-tabs [role=tab]:focus-visible{outline:3px solid #2a78d6;outline-offset:-3px}
+.cm-tabs [role=tabpanel]{padding:.75rem 0}
+.cm-opciones{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.75rem;border:0;padding:0}
+.cm-opcion{position:relative;border:1.5px solid #6b6a66;border-radius:10px;padding:.75rem;cursor:pointer}
+.cm-opcion input{position:absolute;opacity:0}
+.cm-opcion:has(input:checked){border-color:#2a78d6;box-shadow:0 0 0 2px #2a78d6}
+.cm-opcion:has(input:focus-visible){outline:3px solid #2a78d6;outline-offset:3px}
+.cm-opcion .tit{font-weight:600;display:block}
+.cm-opcion:has(input:checked) .tit::before{content:"✓ "}
+.cm-aviso{position:relative;margin-top:.75rem;display:flex;gap:1rem;align-items:center;justify-content:space-between;background:#1a1a1a;color:#fff;border-radius:10px;padding:.75rem 1rem;max-width:420px}
+.cm-aviso button{background:none;border:0;color:#9ec5ff;font:inherit;font-weight:700;cursor:pointer}
+.cm-aviso button:focus-visible{outline:3px solid #9ec5ff;outline-offset:2px}
+.cm-acordeon details{border:1px solid var(--bs-border-color);border-radius:8px;margin:.5rem 0}
+.cm-acordeon summary{padding:.75rem 1rem;font-weight:600;cursor:pointer}
+.cm-acordeon summary:focus-visible{outline:3px solid #2a78d6;outline-offset:2px}
+.cm-acordeon details > div{padding:0 1rem .75rem}
+@media (prefers-reduced-motion: reduce){.cm-switch .pista,.cm-switch .pista::after{transition:none}}
+</style>
+```
+
+::: {.panel-tabset}
+
+### Campo de texto
+
+```{=html}
+<div class="cm-demo">
+  <div class="cm-campo" id="cm-correo-campo">
+    <label for="cm-correo">Correo para invitar</label>
+    <input id="cm-correo" type="email" autocomplete="email" aria-describedby="cm-correo-ayuda" placeholder="nombre@alumnos.uc3m.es">
+    <div class="ayuda" id="cm-correo-ayuda">Solo correos de la UC3M.</div>
+  </div>
+</div>
+<script>
+(() => {
+  const c = document.getElementById("cm-correo-campo"), i = document.getElementById("cm-correo"), a = document.getElementById("cm-correo-ayuda");
+  i.addEventListener("blur", () => {
+    const v = i.value.trim(), ok = v === "" || /^[^@\s]+@(alumnos\.)?uc3m\.es$/i.test(v);
+    c.classList.toggle("error", !ok); i.setAttribute("aria-invalid", ok ? "false" : "true");
+    a.textContent = ok ? "Solo correos de la UC3M." : "⚠ Escribe un correo que termine en @uc3m.es o @alumnos.uc3m.es.";
+  });
+})();
+</script>
+<div class="cm-estados" aria-label="Estados del campo de texto" role="group">
+  <div class="cm-campo"><label for="e1">Normal</label><input id="e1" placeholder="nombre@uc3m.es" tabindex="-1"></div>
+  <div class="cm-campo cm-forzar-foco"><label for="e2">Foco</label><input id="e2" placeholder="nombre@uc3m.es" tabindex="-1"></div>
+  <div class="cm-campo"><label for="e3">Relleno</label><input id="e3" value="lucia@alumnos.uc3m.es" tabindex="-1"></div>
+  <div class="cm-campo error"><label for="e4">Error</label><input id="e4" value="lucia@gmail" aria-invalid="true" aria-describedby="e4a" tabindex="-1"><div class="ayuda" id="e4a">⚠ Escribe un correo de la UC3M.</div></div>
+  <div class="cm-campo"><label for="e5">Desactivado</label><input id="e5" value="No disponible" disabled></div>
+</div>
+```
+
+Escribe un correo que no sea de la UC3M y sal del campo con Tab: el error aparece **al salir**, no mientras escribes, y explica **cómo corregirlo**.
+
+| Aspecto | Especificación |
+|---|---|
+| Anatomía | Etiqueta visible (no solo marcador), campo, texto de ayuda o de error |
+| Error | Borde y texto en rojo **más** el símbolo ⚠ y un mensaje; `aria-invalid="true"` |
+| Validación | Al perder el foco o al enviar, nunca a cada pulsación |
+| Accesibilidad | `<label for>`, `aria-describedby` hacia la ayuda, `autocomplete` adecuado |
+
+### Interruptor
+
+```{=html}
+<div class="cm-demo">
+  <button type="button" class="cm-switch" role="switch" aria-checked="true" id="cm-sw"><span class="pista" aria-hidden="true"></span><span>Recordarme 30 minutos antes</span></button>
+  <p class="small mb-0 mt-2" aria-live="polite" id="cm-sw-msg">Recordatorio activado.</p>
+</div>
+<script>
+(() => { const b = document.getElementById("cm-sw"), m = document.getElementById("cm-sw-msg");
+  b.addEventListener("click", () => { const on = b.getAttribute("aria-checked") !== "true"; b.setAttribute("aria-checked", on); m.textContent = on ? "Recordatorio activado." : "Recordatorio desactivado."; }); })();
+</script>
+```
+
+| Aspecto | Especificación |
+|---|---|
+| Cuándo usarlo | Para un ajuste que **se aplica al instante** (sin botón «Guardar»). Si hay que confirmar, usa una casilla |
+| Estado | `role="switch"` y `aria-checked`; la posición del círculo **y** el color indican el estado |
+| Teclado | Tab para llegar; Espacio o Intro para cambiar |
+| Zona táctil | Toda la fila (control y texto), al menos 44 px de alto |
+
+### Pestañas
+
+```{=html}
+<div class="cm-demo cm-tabs">
+  <div role="tablist" aria-label="Información de la sala">
+    <button role="tab" id="cm-t1" aria-selected="true" aria-controls="cm-p1">Detalles</button>
+    <button role="tab" id="cm-t2" aria-selected="false" aria-controls="cm-p2" tabindex="-1">Normas</button>
+    <button role="tab" id="cm-t3" aria-selected="false" aria-controls="cm-p3" tabindex="-1">Cómo llegar</button>
+  </div>
+  <div role="tabpanel" id="cm-p1" aria-labelledby="cm-t1" tabindex="0">Sala para 6 personas con pizarra y enchufes.</div>
+  <div role="tabpanel" id="cm-p2" aria-labelledby="cm-t2" tabindex="0" hidden>Máximo 2 horas al día. Confirma tu llegada en 15 minutos.</div>
+  <div role="tabpanel" id="cm-p3" aria-labelledby="cm-t3" tabindex="0" hidden>Biblioteca de Getafe, planta 2, al fondo a la derecha.</div>
+</div>
+<script>
+(() => { const tabs = [...document.querySelectorAll(".cm-tabs [role=tab]")];
+  const activar = (t) => { tabs.forEach((x) => { const s = x === t; x.setAttribute("aria-selected", s); x.tabIndex = s ? 0 : -1; document.getElementById(x.getAttribute("aria-controls")).hidden = !s; }); t.focus(); };
+  tabs.forEach((t, i) => { t.addEventListener("click", () => activar(t)); t.addEventListener("keydown", (e) => {
+    const n = {ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1}[e.key];
+    if (n !== undefined) { e.preventDefault(); activar(tabs[(n + tabs.length) % tabs.length]); } }); }); })();
+</script>
+```
+
+Con el teclado: Tab entra en la pestaña activa y las **flechas** cambian de pestaña; otro Tab salta al contenido.
+
+| Aspecto | Especificación |
+|---|---|
+| Cuándo usarlas | Para alternar vistas **del mismo nivel** dentro de una pantalla; no para navegar entre secciones |
+| Estado activo | Subrayado de 3 px **y** texto en negrita, no solo color |
+| Roles | `tablist`, `tab` con `aria-selected` y `aria-controls`, `tabpanel` |
+| Teclado | Flechas izquierda/derecha, Inicio y Fin; solo la pestaña activa recibe el Tab |
+
+### Opciones en tarjeta
+
+```{=html}
+<div class="cm-demo">
+  <fieldset class="cm-opciones">
+    <legend class="fw-semibold mb-2">Elige la franja</legend>
+    <label class="cm-opcion"><input type="radio" name="cm-franja" checked><span class="tit">16:00–18:00</span><span class="small">4 salas libres</span></label>
+    <label class="cm-opcion"><input type="radio" name="cm-franja"><span class="tit">18:00–20:00</span><span class="small">6 salas libres</span></label>
+    <label class="cm-opcion"><input type="radio" name="cm-franja"><span class="tit">20:00–21:00</span><span class="small">9 salas libres</span></label>
+  </fieldset>
+</div>
+```
+
+Son botones de opción nativos con otro aspecto: funcionan con las **flechas** y los lectores de pantalla los anuncian como «1 de 3».
+
+| Aspecto | Especificación |
+|---|---|
+| Base | `<input type="radio">` dentro de `<fieldset>` con `<legend>` |
+| Seleccionada | Borde y halo azules **más** el símbolo ✓ |
+| Toda la tarjeta | Es la zona táctil (la etiqueta envuelve el control) |
+
+### Aviso con deshacer
+
+```{=html}
+<div class="cm-demo">
+  <p class="mb-2">Reserva: <strong id="cm-res">Sala 2.14 · hoy 16:00–18:00</strong></p>
+  <button type="button" class="btn btn-outline-danger btn-sm" id="cm-cancelar">Cancelar reserva</button>
+  <div id="cm-region" role="status" aria-live="polite"></div>
+</div>
+<script>
+(() => { const b = document.getElementById("cm-cancelar"), reg = document.getElementById("cm-region"), r = document.getElementById("cm-res"); let tm;
+  b.addEventListener("click", () => {
+    r.style.textDecoration = "line-through"; b.disabled = true;
+    reg.innerHTML = '<div class="cm-aviso"><span>Reserva cancelada.</span><button type="button">Deshacer</button></div>';
+    const d = reg.querySelector("button"); d.focus();
+    d.addEventListener("click", () => { clearTimeout(tm); r.style.textDecoration = ""; b.disabled = false; reg.innerHTML = '<p class="small mt-2 mb-0">Reserva recuperada.</p>'; b.focus(); });
+    clearTimeout(tm); tm = setTimeout(() => { if (reg.querySelector(".cm-aviso")) reg.innerHTML = '<p class="small mt-2 mb-0">La sala ya está libre para otras personas.</p>'; }, 10000);
+  }); })();
+</script>
+```
+
+En lugar de preguntar «¿Seguro?», la acción se hace y se ofrece **deshacer** durante 10 segundos. Es más rápido para quien acierta y seguro para quien se equivoca.
+
+| Aspecto | Especificación |
+|---|---|
+| Cuándo usarlo | Acciones reversibles. Para las irreversibles, diálogo de confirmación |
+| Duración | Al menos 10 s; no desaparece mientras tiene el foco |
+| Anuncio | Región `role="status"` para que el lector de pantalla lo lea |
+| Foco | Pasa a «Deshacer» y vuelve al origen al terminar |
+
+### Acordeón
+
+```{=html}
+<div class="cm-demo cm-acordeon">
+  <details open><summary>¿Cuánto tiempo puedo reservar?</summary><div>Hasta 2 horas al día por persona.</div></details>
+  <details><summary>¿Qué pasa si llego tarde?</summary><div>Si no confirmas tu llegada en 15 minutos, la sala se libera.</div></details>
+  <details><summary>¿Hay salas adaptadas?</summary><div>Sí: todas las plantas tienen al menos una sala accesible.</div></details>
+</div>
+```
+
+| Aspecto | Especificación |
+|---|---|
+| Base | `<details>` y `<summary>`: accesibles sin código |
+| Indicador | Triángulo que gira **y** texto del título en negrita |
+| Contenido | Lo que solo una parte de las personas necesita; lo esencial, fuera del acordeón |
+
+:::
+
+## Actividad: el estado que falta
+
+::: {.clasificar #ia-componentes titulo="¿Qué falla en cada especificación?" categorias="Falta un estado|Depende solo del color|Problema de teclado|Correcto"}
+- Campo de texto especificado en normal, foco y relleno → Falta un estado // Faltan el error y el desactivado.
+- Interruptor cuyo estado activo es verde y el inactivo gris, sin más diferencias → Depende solo del color // Añade la posición del círculo o un texto.
+- Pestañas en las que cada pestaña recibe el Tab → Problema de teclado // Solo la activa recibe el Tab; las demás, con flechas.
+- Aviso de deshacer que desaparece a los 3 segundos → Problema de teclado // Con teclado o lector de pantalla no da tiempo a llegar.
+- Tarjetas de opción hechas con div y clic, sin input → Problema de teclado // No se pueden elegir con teclado ni las anuncia un lector de pantalla.
+- Campo con error: borde rojo, símbolo ⚠ y mensaje que explica cómo corregirlo → Correcto // No depende solo del color y ayuda a recuperarse.
+:::

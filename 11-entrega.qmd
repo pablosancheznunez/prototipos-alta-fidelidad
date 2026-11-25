@@ -54,6 +54,18 @@ También observaron que implicar pronto al equipo de desarrollo reducía esas ru
 
 Las herramientas de diseño permiten inspeccionar medidas y estilos, pero no explican el **porqué** ni los **casos límite**: eso va en las **anotaciones**.
 
+### Un ejemplo de especificación visual
+
+La especificación «en rojo» (*redline*) anota sobre la maqueta final las medidas, los *tokens* y los estados que no se ven en una imagen estática. No sustituye a los *tokens* en código, pero ayuda a revisar juntos la pantalla.
+
+![Maqueta final de la ficha de sala con cotas de márgenes (24 px), alturas (48 px del botón) y separaciones, y notas con los *tokens* de color, tamaños de letra y estados de cada elemento.](figuras/m_redline.svg){#fig-redline fig-alt="Maqueta móvil de la sala 2.14 con líneas de cota rosas: márgenes laterales de 24 píxeles, botón de 48 de alto y separación de 28 sobre él. A la derecha, notas conectadas a la cabecera, el título, las etiquetas, la barra de disponibilidad, el botón principal y el enlace secundario, con tamaños de letra, pesos, radios, tokens de color y contraste."}
+
+Descarga la [plantilla de especificación de componente](plantillas/especificacion-componente.md) (Markdown): anatomía, estados, teclado, accesibilidad y contenido.
+
+::: {.column-margin}
+**Medidas en múltiplos de 4 u 8.** Si una medida no encaja en la escala de espaciado, suele ser un error de la maqueta y no una decisión de diseño.
+:::
+
 ## 3. Control de versiones
 
 Los archivos de diseño cambian mientras se construye el producto. Para que todos trabajen sobre la versión correcta:
@@ -75,6 +87,57 @@ Los archivos de diseño cambian mientras se construye el producto. Para que todo
 Toma una pantalla de tu proyecto y pide a un compañero que la «construya» describiéndola solo con lo que ve en el archivo. Anota cada pregunta que te haga: cada una es una ruptura de diseño que la especificación debería haber resuelto.
 
 ![Una pantalla anotada para el traspaso: medidas, *tokens* y estados.](figuras/t11_especificacion.svg){#fig-t11-especificacion fig-alt="Una tarjeta «Renovar préstamo» con un botón azul. Cotas en rojo indican un ancho de 320 píxeles, un margen de 24 y una altura de botón de 44 píxeles. Tres notas a la derecha: título 20/28 px semibold con color-texto-principal; botón con boton-primario y radio-control de 8 px; estados reposo, foco, pulsado, cargando y error."}
+
+## Laboratorio: lista de comprobación de accesibilidad {#lab-t11-accesibilidad}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+Antes de entregar, revisa tu prototipo con estos criterios de las **WCAG 2.2** (nivel AA). Marca cada uno como cumplido, pendiente o no aplicable; el informe lista lo pendiente con el número del criterio para que desarrollo lo localice.
+
+```{ojs}
+//| echo: false
+{
+  const C = [
+    ["Perceptible", "1.1.1", "Contenido no textual", "Las imágenes informativas tienen texto alternativo; las decorativas, alt vacío."],
+    ["Perceptible", "1.3.1", "Información y relaciones", "Títulos, listas, tablas y etiquetas de formulario están marcados como tales, no solo con estilo."],
+    ["Perceptible", "1.4.1", "Uso del color", "Ninguna información depende solo del color (estados, errores, gráficos)."],
+    ["Perceptible", "1.4.3", "Contraste mínimo", "Texto con contraste de al menos 4,5:1 (3:1 si es grande)."],
+    ["Perceptible", "1.4.10", "Reajuste del contenido", "A 320 px de ancho no hace falta desplazarse en horizontal."],
+    ["Perceptible", "1.4.11", "Contraste no textual", "Bordes de campos, iconos y foco con contraste de al menos 3:1."],
+    ["Operable", "2.1.1", "Teclado", "Todo se puede hacer con teclado, sin trampas de foco."],
+    ["Operable", "2.2.1", "Tiempo ajustable", "Los límites de tiempo se pueden ampliar o desactivar, o duran al menos 20 horas."],
+    ["Operable", "2.4.3", "Orden del foco", "El foco sigue un orden lógico y predecible."],
+    ["Operable", "2.4.7", "Foco visible", "Siempre se ve qué elemento tiene el foco."],
+    ["Operable", "2.5.8", "Tamaño del objetivo (mínimo)", "Las zonas táctiles miden al menos 24 × 24 px (mejor 44 × 44)."],
+    ["Comprensible", "3.2.3", "Navegación coherente", "La navegación está en el mismo sitio y orden en todas las pantallas."],
+    ["Comprensible", "3.3.1", "Identificación de errores", "Los errores se señalan con texto y se indica dónde están."],
+    ["Comprensible", "3.3.2", "Etiquetas o instrucciones", "Cada campo tiene etiqueta visible e instrucciones cuando hacen falta."],
+    ["Robusto", "4.1.2", "Nombre, función, valor", "Los componentes personalizados exponen su rol, nombre y estado (ARIA)."],
+    ["Robusto", "4.1.3", "Mensajes de estado", "Las confirmaciones y avisos se anuncian sin mover el foco (role=status)."]];
+  const OPC = ["Pendiente", "Cumple", "No aplica"];
+  const raiz = html`<div class="acc-lab"></div>`;
+  const barra = html`<div class="mb-2"><div class="progress" role="progressbar" aria-label="Criterios revisados" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width:0%"></div></div></div>`;
+  const tabla = html`<table class="table table-sm align-middle"><thead><tr><th scope="col">Criterio</th><th scope="col">Qué comprobar</th><th scope="col">Estado</th></tr></thead><tbody></tbody></table>`;
+  const sels = C.map(([pr, n, nom, desc]) => { const tr = html`<tr><td class="small"><strong>${n}</strong> ${nom}<br><span class="text-body-secondary">${pr}</span></td><td class="small">${desc}</td><td><select class="form-select form-select-sm" aria-label="${n} ${nom}">${OPC.map((o) => `<option>${o}</option>`).join("")}</select></td></tr>`; tabla.tBodies[0].append(tr); return tr.querySelector("select"); });
+  const salida = html`<div role="status" aria-live="polite"></div>`;
+  function act() {
+    const est = sels.map((s) => s.value), hechos = est.filter((e) => e !== "Pendiente").length, pct = Math.round(100 * hechos / C.length);
+    barra.querySelector(".progress-bar").style.width = pct + "%"; barra.firstElementChild.setAttribute("aria-valuenow", pct);
+    const pend = C.filter((_, i) => est[i] === "Pendiente");
+    const md = `# Revisión de accesibilidad (WCAG 2.2 AA)\n\nRevisados: ${hechos} de ${C.length}.\n\n## Pendientes\n\n` + (pend.map((c) => `- [ ] **${c[1]} ${c[2]}**: ${c[3]}`).join("\n") || "Ninguno.") + "\n";
+    const url = URL.createObjectURL(new Blob([md], {type: "text/markdown"}));
+    salida.innerHTML = `<p><strong>${hechos} de ${C.length} revisados</strong> (${pct} %). ${pend.length ? `Pendientes: ${pend.map((c) => c[1]).join(", ")}.` : "✓ Todo revisado."}</p><a class="btn btn-outline-primary btn-sm" download="revision-accesibilidad.md" href="${url}">Descargar el informe (.md)</a>`;
+  }
+  raiz.addEventListener("input", act); raiz.append(barra, tabla, salida); act();
+  return raiz;
+}
+```
+
+Esta lista resume 16 criterios frecuentes en prototipos; la conformidad completa exige revisar todos los criterios aplicables de las WCAG, con herramientas automáticas **y** pruebas manuales.
+:::
 
 ## Caso práctico resuelto
 

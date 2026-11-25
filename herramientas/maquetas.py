@@ -24,3 +24,24 @@ c += t(24, 494, "Máximo 2 horas al día. Confirma tu llegada en 15 min.", 13, "
 c += r(24, 528, 312, 48, "#1c6b3a", 10) + t(180, 558, "Reservar 16:00–18:00", 16, "#ffffff", "600", "middle") + t(180, 604, "Ver otras salas", 14, "#1c6b3a", "600", "middle")
 svg("m_despues", c)
 print("ok")
+
+# Especificación «redline» sobre la maqueta final
+import re as _re
+_base = (OUT / "m_despues.svg").read_text(encoding="utf-8")
+_cuerpo = _re.sub(r"^<svg[^>]*>|</svg>\s*$", "", _base.strip())
+M = "#d6336c"
+def cota_h(x1, x2, y, txt): return f'<line x1="{x1}" y1="{y}" x2="{x2}" y2="{y}" stroke="{M}" stroke-width="1.5"/><line x1="{x1}" y1="{y-5}" x2="{x1}" y2="{y+5}" stroke="{M}" stroke-width="1.5"/><line x1="{x2}" y1="{y-5}" x2="{x2}" y2="{y+5}" stroke="{M}" stroke-width="1.5"/><rect x="{(x1+x2)/2-18}" y="{y-17}" width="36" height="14" rx="3" fill="{M}"/><text x="{(x1+x2)/2}" y="{y-6}" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">{txt}</text>'
+def cota_v(x, y1, y2, txt): return f'<line x1="{x}" y1="{y1}" x2="{x}" y2="{y2}" stroke="{M}" stroke-width="1.5"/><line x1="{x-5}" y1="{y1}" x2="{x+5}" y2="{y1}" stroke="{M}" stroke-width="1.5"/><line x1="{x-5}" y1="{y2}" x2="{x+5}" y2="{y2}" stroke="{M}" stroke-width="1.5"/><rect x="{x+4}" y="{(y1+y2)/2-7}" width="36" height="14" rx="3" fill="{M}"/><text x="{x+22}" y="{(y1+y2)/2+4}" font-size="10" fill="#fff" text-anchor="middle" font-weight="600">{txt}</text>'
+def nota(x, y, xs, ys, lineas):
+    s = f'<path d="M{xs} {ys} L{x-6} {y}" fill="none" stroke="{M}" stroke-width="1.2"/><circle cx="{xs}" cy="{ys}" r="3" fill="{M}"/>'
+    return s + "".join(f'<text x="{x}" y="{y + 4 + k*15}" font-size="12" fill="#0b0b0b" font-weight="{"700" if k == 0 else "400"}">{l}</text>' for k, l in enumerate(lineas))
+c = f'<g>{_cuerpo}</g>'
+c += cota_h(0, 24, 600, "24") + cota_h(336, 360, 600, "24") + cota_v(344, 500, 528, "28") + cota_v(344, 528, 576, "48")
+c += nota(392, 70, 300, 50, ["Cabecera", "fondo --marca #1c6b3a", "título 17 px / 600, blanco"])
+c += nota(392, 250, 260, 262, ["Título de pantalla", "19 px / 600 · --texto #0b0b0b"])
+c += nota(392, 310, 330, 324, ["Etiquetas", "13 px · radio 16 · --superficie", "separación 8 px"])
+c += nota(392, 400, 330, 400, ["Barra de disponibilidad", "libre: --marca · ocupada: borde", "#8a8a8a + leyenda en texto"])
+c += nota(392, 540, 336, 552, ["Botón principal", "alto 48 · radio 10 · 16 px / 600", "contraste 6,9:1 · estados: tabla", "del laboratorio visual"])
+c += nota(392, 610, 230, 600, ["Enlace secundario", "14 px / 600 · --marca"])
+(OUT / "m_redline.svg").write_text(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 660" width="640" height="660" {F}><rect width="640" height="660" fill="#fff"/>{c}</svg>', encoding="utf-8")
+print("redline ok")

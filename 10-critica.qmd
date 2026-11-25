@@ -69,6 +69,56 @@ Se critica el **diseño**, no a la persona; se empieza por **preguntas** antes q
 
 Un **facilitador** ayuda a que la sesión cumpla su objetivo: controla el tiempo, reconduce los comentarios de gusto, da la palabra a todos y resume las conclusiones.
 
+## 5. De la crítica a la prueba con usuarios
+
+La crítica entre profesionales detecta problemas de diseño, pero no sustituye a observar a quienes usarán el producto. Con el prototipo de alta fidelidad ya se puede hacer una **prueba de usabilidad** moderada: unas pocas personas intentan tareas realistas mientras piensan en voz alta y el equipo observa sin ayudar. Con **cinco participantes** suelen aparecer los problemas más frecuentes; es mejor hacer varias rondas pequeñas que una grande.
+
+Las tareas deben describir **el objetivo**, no los pasos: «Reserva una sala para cuatro personas esta tarde» y no «Pulsa en Buscar y elige 16:00». Si la tarea nombra los botones, la prueba mide si la gente sabe leer, no si encuentra el camino.
+
+### Laboratorio: tu plan de prueba {#lab-t10-plan}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+Rellena los campos y obtén un plan de prueba listo para tu entrega. El laboratorio avisa de los errores habituales.
+
+```{ojs}
+//| echo: false
+{
+  const raiz = html`<div class="plan-lab"></div>`;
+  const campo = (id, et, val, tipo = "input") => { const d = html`<div class="mb-2"><label class="form-label" for="${id}">${et}</label>${tipo === "area" ? `<textarea id="${id}" class="form-control form-control-sm" rows="4">${val}</textarea>` : `<input id="${id}" class="form-control form-control-sm" value="${val}">`}</div>`; raiz.append(d); return d.querySelector("input, textarea"); };
+  const obj = campo("pl-obj", "Objetivo de la prueba", "Comprobar si el estudiantado encuentra y reserva una sala libre en menos de un minuto");
+  const pro = campo("pl-pro", "Prototipo y versión", "ReservaSala, prototipo navegable v3");
+  const per = campo("pl-per", "Perfil de participantes", "Estudiantes de grado que han reservado una sala alguna vez");
+  const num = campo("pl-num", "Número de participantes", "5");
+  const tar = campo("pl-tar", "Tareas (una por línea)", "Reserva una sala para cuatro personas esta tarde\nCancela la reserva que tienes para mañana\nAverigua si la sala 2.14 tiene pizarra", "area");
+  const met = html`<fieldset class="mb-2"><legend class="form-label">Métricas</legend>${["Éxito de la tarea", "Tiempo", "Errores", "Facilidad tras cada tarea (SEQ)", "Cuestionario SUS al final"].map((m, i) => `<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="pl-m${i}" ${i < 2 || i === 3 ? "checked" : ""}><label class="form-check-label" for="pl-m${i}">${m}</label></div>`).join("")}</fieldset>`;
+  raiz.append(met);
+  const salida = html`<div role="status" aria-live="polite"></div>`;
+  const esc = (s) => s.replace(/[&<>]/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;"}[c]));
+  function plan() {
+    const tareas = tar.value.split("\n").map((x) => x.trim()).filter(Boolean);
+    const metricas = [...met.querySelectorAll("input")].filter((x) => x.checked).map((x) => x.nextElementSibling.textContent);
+    const n = parseInt(num.value) || 0;
+    const avisos = [];
+    tareas.forEach((t, i) => { if (/\b(pulsa|haz clic|clica|toca|botón|menú|pestaña)\b/i.test(t)) avisos.push(`La tarea ${i + 1} nombra elementos de la interfaz: describe el objetivo, no los pasos.`); });
+    if (tareas.length > 6) avisos.push("Más de 6 tareas alarga la sesión por encima de 45 minutos: prioriza.");
+    if (n > 8) avisos.push("Con más de 8 participantes en una ronda, los problemas se repiten: mejor dos rondas de 5 con cambios entre medias.");
+    if (n > 0 && n < 3) avisos.push("Con menos de 3 participantes es fácil confundir un caso particular con un problema general.");
+    if (!metricas.length) avisos.push("Elige al menos una métrica.");
+    const minutos = 10 + tareas.length * 6;
+    const md = `# Plan de prueba de usabilidad\n\n**Objetivo:** ${obj.value}\n\n**Prototipo:** ${pro.value}\n\n**Participantes:** ${n} · ${per.value}\n\n**Duración estimada:** ${minutos} minutos por sesión\n\n## Guion\n\n1. Bienvenida y consentimiento (grabación opcional).\n2. Explicar que se evalúa el diseño, no a la persona, y pedir que piense en voz alta.\n${tareas.map((t, i) => `${i + 3}. Tarea ${i + 1}: «${t}»`).join("\n")}\n${tareas.length + 3}. Preguntas finales y agradecimiento.\n\n## Métricas\n\n${metricas.map((m) => "- " + m).join("\n")}\n`;
+    const url = URL.createObjectURL(new Blob([md], {type: "text/markdown"}));
+    salida.innerHTML = `${avisos.length ? `<div class="alert alert-warning small">${avisos.map((a) => "⚠ " + esc(a)).join("<br>")}</div>` : '<p class="small">✓ Sin avisos.</p>'}<pre class="small" style="white-space:pre-wrap">${esc(md)}</pre><a class="btn btn-outline-primary btn-sm" download="plan-de-prueba.md" href="${url}">Descargar el plan (.md)</a>`;
+  }
+  raiz.addEventListener("input", plan); raiz.append(salida); plan();
+  return raiz;
+}
+```
+:::
+
 ## Práctica
 
 En grupos de tres, cada persona presenta durante cinco minutos una pantalla de su proyecto siguiendo el guion del apartado 2. Las otras dos dan tres comentarios cada una con el esquema del apartado 3. Rotad los papeles de quien presenta, quien comenta y quien facilita.
