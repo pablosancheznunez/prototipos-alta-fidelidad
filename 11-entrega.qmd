@@ -74,6 +74,43 @@ Los archivos de diseño cambian mientras se construye el producto. Para que todo
 
 Toma una pantalla de tu proyecto y pide a un compañero que la «construya» describiéndola solo con lo que ve en el archivo. Anota cada pregunta que te haga: cada una es una ruptura de diseño que la especificación debería haber resuelto.
 
+![Una pantalla anotada para el traspaso: medidas, *tokens* y estados.](figuras/t11_especificacion.svg){#fig-t11-especificacion fig-alt="Una tarjeta «Renovar préstamo» con un botón azul. Cotas en rojo indican un ancho de 320 píxeles, un margen de 24 y una altura de botón de 44 píxeles. Tres notas a la derecha: título 20/28 px semibold con color-texto-principal; botón con boton-primario y radio-control de 8 px; estados reposo, foco, pulsado, cargando y error."}
+
+## Actividades
+
+::: {.clasificar #ia-t11a-espec titulo="¿Debe ir en la especificación?" categorias="Sí|No hace falta"}
+- Los estados de cada componente (vacío, cargando, error) → Sí
+- Los textos reales, incluidos los mensajes de error → Sí
+- El comportamiento en móvil, tableta y escritorio → Sí
+- Las notas de accesibilidad: orden del foco, textos alternativos, etiquetas → Sí
+- La historia completa de todas las versiones descartadas → No hace falta // Basta con las decisiones y su porqué.
+- Los tokens y componentes del sistema de diseño que se usan → Sí
+:::
+
+::: {.ordenar #ia-t11a-traspaso titulo="Ordena el traspaso al equipo de desarrollo"}
+1. Revisar juntos el alcance y los criterios de aceptación
+2. Recorrer los flujos y sus estados
+3. Señalar los componentes del sistema y los nuevos
+4. Resolver dudas técnicas y acordar cambios
+5. Revisar la implementación frente al diseño
+6. Registrar los cambios en el control de versiones
+:::
+
+::: {.clasificar #ia-t11a-versiones titulo="¿Buena práctica de control de versiones?" categorias="Buena práctica|Mala práctica"}
+- Ficheros llamados «final_v3_ahora_si.fig» → Mala práctica
+- Un registro de cambios que explica qué cambió y por qué → Buena práctica
+- Ramas o páginas separadas para exploraciones y para lo aprobado → Buena práctica
+- Cambiar el diseño aprobado sin avisar al equipo de desarrollo → Mala práctica
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **«Tirar el diseño por encima del muro»**: entregar y desaparecer.
+- **Especificar solo el camino feliz**: faltan estados, errores y textos largos.
+- **Medidas sueltas en lugar de tokens**: cada desarrollador interpreta un 15 o un 16 px a su manera.
+- **No revisar la implementación**: el traspaso termina cuando el diseño funciona en producción.
+:::
+
 ## Reto evaluable {#reto-t11}
 
 ::: {.callout-important appearance="simple" icon="false"}

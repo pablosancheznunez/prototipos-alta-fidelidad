@@ -71,6 +71,26 @@ Las maquetas sirven para presentar el diseño a quienes deciden, a clientes y al
 
 Elige dos webs del mismo tipo (por ejemplo, dos catálogos de bibliotecas). Míralas durante un segundo cada una y anota tu primera impresión. Después analiza qué elementos (complejidad, densidad, tipografía, imágenes, parecido con lo esperado) la explican, con los hallazgos de Lindgaard et al. y Tuch et al.
 
+## Actividades
+
+::: {.clasificar #ia-t2a-criterios titulo="¿Cumple los criterios de una maqueta profesional?" categorias="Cumple|No cumple"}
+- Usa textos reales y representativos, incluidos los largos → Cumple
+- Cada pantalla tiene márgenes distintos → No cumple // Falta consistencia.
+- Los colores y estilos salen de una biblioteca compartida → Cumple
+- Las imágenes tienen marcas de agua de un banco de imágenes → No cumple
+- Muestra los estados de error y vacío, no solo el ideal → Cumple
+- Los nombres de las capas son «Rectángulo 37» y «Grupo 12» → No cumple // Dificulta el traspaso.
+:::
+
+::: {.ordenar #ia-t2a-presentar titulo="Ordena la presentación de una maqueta a las partes interesadas"}
+1. Recordar el problema y el objetivo
+2. Explicar a quién va dirigido el diseño
+3. Recorrer el flujo principal con un caso concreto
+4. Mostrar las decisiones clave y su porqué
+5. Pedir comentarios sobre aspectos concretos
+6. Acordar los siguientes pasos
+:::
+
 ## Reto evaluable {#reto-t2}
 
 ::: {.callout-important appearance="simple" icon="false"}

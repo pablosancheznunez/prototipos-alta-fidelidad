@@ -79,6 +79,32 @@ Por eso la regla es **subir la fidelidad en el momento justo**: cuando la estruc
 
 Toma uno de los prototipos de baja fidelidad que hiciste en la asignatura anterior. Escribe tres preguntas sobre él que **no** puedas responder sin subir la fidelidad, y para cada una indica el tipo de prototipo de la tabla del apartado 4 que usarías.
 
+![Qué preguntas puede responder cada nivel de fidelidad.](figuras/t1_decisiones.svg){#fig-t1-decisiones fig-alt="Tabla con cinco preguntas y dos columnas, baja y alta fidelidad. La baja valida si encuentran la función y si entienden el flujo; no valida si se lee bien el texto, si la marca transmite confianza ni si la respuesta se percibe rápida. La alta valida las cinco."}
+
+## Actividades
+
+::: {.clasificar #ia-t1a-tipo titulo="¿Qué tipo de prototipo de alta fidelidad es?" categorias="Maqueta estática|Prototipo navegable|Prototipo en código"}
+- Pantallas definitivas exportadas como imágenes para una presentación → Maqueta estática
+- Pantallas enlazadas en una herramienta de diseño, con transiciones → Prototipo navegable
+- Una página en HTML y CSS que funciona en el navegador con datos de ejemplo → Prototipo en código
+- Un PDF con todas las pantallas del flujo de reserva → Maqueta estática
+:::
+
+::: {.clasificar #ia-t1a-cuando titulo="¿Merece la pena la alta fidelidad?" categorias="Sí|Todavía no"}
+- Probar si el tono visual encaja con la marca de la universidad → Sí
+- Decidir entre tres estructuras de navegación → Todavía no // Explóralas antes en baja fidelidad.
+- Comprobar la legibilidad del texto en móvil → Sí
+- Presentar el diseño a la dirección para conseguir financiación → Sí
+- Descubrir qué necesitan las personas usuarias → Todavía no // Eso es investigación, no prototipado.
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Saltarse la baja fidelidad** y defender decisiones de estructura que nadie ha probado.
+- **Confundir pulido con validado**: una maqueta bonita puede esconder un flujo que no funciona.
+- **El efecto «ya está hecho»**: quien ve un prototipo muy pulido opina menos sobre la estructura.
+:::
+
 ## Reto evaluable {#reto-t1}
 
 ::: {.callout-important appearance="simple" icon="false"}

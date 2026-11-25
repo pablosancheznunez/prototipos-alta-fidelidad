@@ -71,6 +71,34 @@ Mezclar iconos de bibliotecas distintas rompe la coherencia aunque cada uno sea 
 
 Busca diez iconos de la aplicación de tu banco o de tu universidad. Tápales la etiqueta y pide a dos personas que digan qué hacen. Anota cuántos aciertan y relaciona los fallos con la concreción y la distancia semántica de McDougall et al.
 
+![Icono, etiqueta o las dos cosas. Salvo los pocos iconos universales, la etiqueta despeja la ambigüedad.](figuras/t6_iconos.svg){#fig-t6-iconos fig-alt="Tres botones: uno solo con una lupa, otro con la lupa y la palabra Buscar, y otro solo con la palabra Buscar. Notas: solo icono, rápido si es universal y ambiguo si no; icono y etiqueta, la opción más clara; solo etiqueta, claro pero ocupa más. Abajo: tamaños mínimos de toque de 24 por 24 píxeles (WCAG 2.2, AA) y 44 por 44 puntos recomendados por Apple."}
+
+## Actividades
+
+::: {.clasificar #ia-t6a-ambiguo titulo="¿Icono universal o ambiguo?" categorias="Bastante universal|Ambiguo: añade etiqueta"}
+- Lupa para buscar → Bastante universal
+- Casa para ir al inicio → Bastante universal
+- Estrella: ¿favorito, valorar o destacado? → Ambiguo: añade etiqueta
+- Corazón: ¿me gusta, guardar o salud? → Ambiguo: añade etiqueta
+- Tres líneas horizontales para abrir el menú → Ambiguo: añade etiqueta // Muy extendido, pero no todo el mundo lo reconoce.
+- Disquete para guardar → Ambiguo: añade etiqueta // Muchas personas jóvenes nunca han usado uno.
+:::
+
+::: {.clasificar #ia-t6a-coherencia titulo="¿Coherente o incoherente en un mismo set de iconos?" categorias="Coherente|Incoherente"}
+- Todos con el mismo grosor de trazo → Coherente
+- Unos rellenos y otros de contorno sin criterio → Incoherente
+- Todos diseñados sobre la misma retícula de 24 px → Coherente
+- Esquinas redondeadas en unos y rectas en otros → Incoherente
+- El estado activo se marca siempre pasando de contorno a relleno → Coherente
+:::
+
+::: {.clasificar #ia-t6a-alt titulo="¿Qué texto alternativo necesita el icono?" categorias="Nombre de la acción|Vacío (decorativo)"}
+- Botón con solo una lupa → Nombre de la acción // aria-label="Buscar".
+- Lupa junto a la palabra «Buscar» dentro del mismo botón → Vacío (decorativo) // La etiqueta visible ya da el nombre.
+- Papelera que borra un préstamo de la lista → Nombre de la acción
+- Icono decorativo en un titular → Vacío (decorativo)
+:::
+
 ## Reto evaluable {#reto-t6}
 
 ::: {.callout-important appearance="simple" icon="false"}

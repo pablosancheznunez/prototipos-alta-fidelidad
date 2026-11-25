@@ -64,6 +64,58 @@ Un riesgo frecuente es esconder información necesaria para «ganar» espacio: o
 
 Toma la captura de una pantalla densa de un servicio que uses. Sin quitar ningún contenido, redistribuye el espacio: agrupa por proximidad, separa las secciones y aísla la acción principal. Compara la primera impresión de las dos versiones con otra persona.
 
+## Laboratorio: densidad de información {#lab-t8-densidad}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+Ajusta el **relleno** y el **espacio entre elementos** de una lista de préstamos y mira cuántos caben en una pantalla de móvil de 640 px de alto. Más densidad muestra más datos; menos densidad facilita la lectura y el toque. No hay un valor correcto: depende de la tarea.
+
+```{ojs}
+//| echo: false
+rango = window.Lab.rango
+viewof d_rel = rango("Relleno interior (px)", [4, 28], {step: 2, value: 12})
+viewof d_sep = rango("Separación entre elementos (px)", [0, 24], {step: 2, value: 8})
+```
+
+```{ojs}
+//| echo: false
+{
+  const alto = 2 * d_rel + 40, total = 640 - 60;
+  const caben = Math.floor((total + d_sep) / (alto + d_sep));
+  const libros = ["Diseño de interacción", "Usabilidad web", "Manual de Quarto", "Tipografía digital", "Color y accesibilidad", "Sistemas de diseño", "Arquitectura de información", "Investigación con usuarios", "Escribir para la web", "Psicología del diseño", "Diseño inclusivo", "Prototipado rápido", "Métricas de UX", "Diseño de servicios"];
+  const d = html`<div role="status"></div>`;
+  d.innerHTML = `<p>Caben <strong>${caben}</strong> préstamos sin desplazarse · altura de cada fila: ${alto} px ${alto < 44 ? '<span class="lab-medio" style="font-weight:600">(menos de 44 px: difícil de tocar)</span>' : ""}</p>
+  <div style="width:240px;height:320px;overflow:hidden;border:2px solid var(--bs-border-color);border-radius:16px;padding:8px;background:var(--bs-body-bg)" aria-hidden="true">
+   <div style="transform:scale(.5);transform-origin:0 0;width:460px">
+    <div style="font-weight:600;font-size:20px;margin:6px 0 16px">Mis préstamos</div>
+    ${libros.map(l => `<div style="padding:${d_rel}px;margin-bottom:${d_sep}px;border-radius:8px;background:rgba(42,120,214,.1)"><div style="font-weight:600;font-size:16px">${l}</div><div style="font-size:13px;opacity:.8">Vence el 02/12</div></div>`).join("")}
+   </div></div>`;
+  return d;
+}
+```
+:::
+
+## Actividades
+
+::: {.clasificar #ia-t8a-tipo titulo="¿Macroespacio o microespacio?" categorias="Macroespacio|Microespacio"}
+- Márgenes laterales de la página → Macroespacio
+- Interlineado de un párrafo → Microespacio
+- Separación entre la cabecera y el contenido → Macroespacio
+- Espacio entre un icono y su etiqueta → Microespacio
+- Separación entre secciones de una página → Macroespacio
+- Espaciado entre letras de un título → Microespacio
+:::
+
+::: {.clasificar #ia-t8a-densidad titulo="¿Más o menos densidad?" categorias="Más densa|Más aireada"}
+- Un panel de control que una bibliotecaria consulta todo el día → Más densa // Usuarias expertas que comparan muchos datos.
+- La página de bienvenida para estudiantes de primero → Más aireada
+- Una tabla de estadísticas de préstamo para comparar meses → Más densa
+- Un formulario para personas mayores → Más aireada
+:::
+
 ## Reto evaluable {#reto-t8}
 
 ::: {.callout-important appearance="simple" icon="false"}

@@ -163,6 +163,121 @@ def tema9():
     guardar(fig, "tema9_atomico.svg")
 
 
+
+# ====================================================================== v1.1
+def t3_transicion():
+    fig, axs = plt.subplots(1, 2, figsize=(10, 4.6))
+    for ax, alta in zip(axs, (False, True)):
+        ax.set_xlim(0, 100); ax.set_ylim(100, 0); ax.set_aspect("equal"); ax.axis("off")
+        borde = TINTA2 if not alta else "#c9cfe0"
+        ax.add_patch(FancyBboxPatch((2, 2), 96, 96, boxstyle="round,pad=0,rounding_size=2", fc=SUP, ec=borde, lw=1.4))
+        if not alta:
+            ax.add_patch(Rectangle((8, 8), 30, 6, fc=GRIS, ec="none"))
+            ax.add_patch(Rectangle((8, 22), 84, 30, fc=SUP, ec=TINTA2, lw=1))
+            ax.plot([8, 92], [22, 52], color=TINTA2, lw=.8); ax.plot([8, 92], [52, 22], color=TINTA2, lw=.8)
+            for i in range(3): ax.add_patch(Rectangle((8, 58 + i * 7), 70 - i * 15, 3.2, fc=GRIS, ec="none"))
+            ax.add_patch(FancyBboxPatch((8, 82), 34, 9, boxstyle="round,pad=0,rounding_size=1", fc=SUP, ec=TINTA2, lw=1.2))
+            ax.text(25, 86.5, "Botón", ha="center", va="center", fontsize=9, color=TINTA2)
+            ax.set_title("Baja fidelidad: estructura", fontsize=11, color=TINTA)
+        else:
+            ax.text(8, 11, "Diseño de interacción", fontsize=12.5, fontweight="bold", color="#000e78", va="center")
+            ax.add_patch(FancyBboxPatch((8, 22), 84, 30, boxstyle="round,pad=0,rounding_size=2", fc="#dbe8f8", ec="none"))
+            ax.add_patch(Circle((50, 37), 8, fc="#2a78d6", ec="none", alpha=.6))
+            ax.text(8, 60, "García, L. (2024)", fontsize=9.5, color=TINTA2, va="center")
+            ax.text(8, 67, "Disponible · Sala 2, estantería 4", fontsize=9.5, color="#0b6b4a", va="center", fontweight="bold")
+            ax.text(8, 74, "2.ª edición · 320 páginas", fontsize=9, color=TINTA2, va="center")
+            ax.add_patch(FancyBboxPatch((8, 82), 34, 9, boxstyle="round,pad=0,rounding_size=1.5", fc="#000e78", ec="none"))
+            ax.text(25, 86.5, "Reservar", ha="center", va="center", fontsize=9.5, color=SUP, fontweight="bold")
+            ax.set_title("Alta fidelidad: tipografía, color, contenido real", fontsize=11, color=TINTA)
+    fig.text(0.5, 0.01, "La estructura se conserva; cambian el aspecto, el contenido y el detalle de la interacción.", ha="center", fontsize=9.5, color=TINTA2)
+    guardar(fig, "t3_transicion.svg")
+
+
+def t6_iconos():
+    fig, ax = plt.subplots(figsize=(9, 3.6)); ax.set_xlim(0, 15); ax.set_ylim(0, 6); ax.axis("off")
+    def lupa(cx, cy, r):
+        ax.add_patch(Circle((cx - r * .15, cy + r * .15), r * .55, fill=False, ec=TINTA, lw=max(1, r * 3)))
+        ax.plot([cx + r * .25, cx + r * .65], [cy - r * .25, cy - r * .65], color=TINTA, lw=max(1, r * 3), solid_capstyle="round")
+    tit = [("Solo icono", 1.6), ("Icono + etiqueta", 6.6), ("Solo etiqueta", 11.6)]
+    for t, x in tit: ax.text(x + 1, 5.5, t, ha="center", fontsize=10.5, fontweight="bold", color=TINTA)
+    for i, (x, et) in enumerate([(1.6, None), (6.6, "Buscar"), (11.6, "Buscar")]):
+        caja(ax, x - 0.6, 3.2, 3.2, 1.6, None, fc=SUP, ec=TINTA2, lw=1.2, r=0.15)
+        if i < 2: lupa(x + (0.4 if et else 1.0), 4.0, 0.55)
+        if et: ax.text(x + (1.2 if i == 1 else 1.0), 4.0, et, va="center", ha="left" if i == 1 else "center", fontsize=11, color=TINTA)
+    notas = ["Rápido de leer si el icono\nes universal; ambiguo si no", "La opción más clara:\nreconocible y sin ambigüedad", "Claro, pero ocupa más\ny se escanea peor"]
+    for (t, x), n in zip(tit, notas): ax.text(x + 1, 2.2, n, ha="center", va="center", fontsize=9, color=TINTA2)
+    ax.text(7.5, 0.5, "Tamaños mínimos de toque: 24 × 24 px (WCAG 2.2, AA) y 44 × 44 pt recomendados (Apple).", ha="center", fontsize=9, color=TINTA2, style="italic")
+    guardar(fig, "t6_iconos.svg")
+
+
+def t7_gestalt():
+    fig, axs = plt.subplots(1, 4, figsize=(11, 3.2))
+    for ax in axs: ax.set_xlim(0, 10); ax.set_ylim(0, 10); ax.set_aspect("equal"); ax.axis("off")
+    for i in range(4):
+        for j in range(4):
+            axs[0].add_patch(Circle((1.5 + j * 1.1 + (2.5 if j >= 2 else 0), 2 + i * 1.8), .38, fc=S[0]))
+            axs[1].add_patch(Circle((1.5 + j * 2.2, 2 + i * 1.8), .38, fc=S[0] if i % 2 == 0 else S[1]))
+    from matplotlib.patches import Arc, Wedge
+    axs[2].add_patch(Arc((5, 5.5), 6, 6, theta1=20, theta2=340, lw=3, color=TINTA))
+    axs[2].add_patch(Arc((5, 5.5), 6, 6, theta1=350, theta2=10, lw=0))
+    xs = [x / 10 for x in range(10, 91)]
+    import math as m
+    axs[3].plot(xs, [5 + 2.5 * m.sin(x / 1.4) for x in xs], color=S[2], lw=3)
+    axs[3].plot(xs, [5 - 2.5 * m.sin(x / 1.4) for x in xs], color=S[0], lw=3)
+    for ax, t, d in zip(axs, ["Proximidad", "Semejanza", "Cierre", "Continuidad"],
+                         ["Lo cercano se agrupa:\nvemos dos columnas", "Lo parecido se agrupa:\nvemos filas por color", "Completamos la forma:\nvemos un círculo", "Seguimos la curva:\nvemos dos líneas"]):
+        ax.set_title(t, fontsize=11, color=TINTA, fontweight="bold")
+        ax.text(5, -0.6, d, ha="center", va="top", fontsize=9, color=TINTA2)
+    guardar(fig, "t7_gestalt.svg")
+
+
+def t9_tokens():
+    fig, ax = plt.subplots(figsize=(10, 3.8)); ax.set_xlim(0, 16); ax.set_ylim(0, 6); ax.axis("off")
+    cols = [("Primitivos", ["azul-900: #000e78", "gris-50: #f6f6f4", "espacio-4: 16 px", "radio-2: 8 px"], S[0]),
+            ("Semánticos", ["color-accion: azul-900", "color-fondo: gris-50", "espacio-componente: espacio-4", "radio-control: radio-2"], S[1]),
+            ("De componente", ["boton-fondo: color-accion", "boton-relleno: espacio-componente", "boton-radio: radio-control", "tarjeta-fondo: color-fondo"], S[2])]
+    for k, (t, items, c) in enumerate(cols):
+        x = 0.2 + k * 5.4
+        ax.text(x + 2.3, 5.55, t, ha="center", fontsize=11, fontweight="bold", color=TINTA)
+        for i, it in enumerate(items):
+            caja(ax, x, 4.3 - i * 1.15, 4.6, 0.9, it, fc=SUP, ec=c, lw=1.6, fs=8.5)
+        if k < 2: flecha(ax, (x + 4.65, 2.6), (x + 5.35, 2.6))
+    ax.text(8, -0.05, "Cambiar un primitivo (un azul) actualiza todos los componentes que lo usan: así escala un sistema de diseño.", ha="center", fontsize=9, color=TINTA2)
+    guardar(fig, "t9_tokens.svg")
+
+
+def t11_especificacion():
+    fig, ax = plt.subplots(figsize=(9, 4.6)); ax.set_xlim(0, 100); ax.set_ylim(60, 0); ax.set_aspect("equal"); ax.axis("off")
+    ax.add_patch(FancyBboxPatch((20, 8), 50, 40, boxstyle="round,pad=0,rounding_size=2", fc=SUP, ec="#c9cfe0", lw=1.4))
+    ax.text(26, 16, "Renovar préstamo", fontsize=11, fontweight="bold", color=TINTA, va="center")
+    ax.text(26, 24, "Diseño de interacción · vence 02/12", fontsize=8.5, color=TINTA2, va="center")
+    ax.add_patch(FancyBboxPatch((26, 34), 24, 8, boxstyle="round,pad=0,rounding_size=1.2", fc="#000e78", ec="none"))
+    ax.text(38, 38, "Renovar", ha="center", va="center", fontsize=9, color=SUP, fontweight="bold")
+    rojo = "#c0392b"
+    ax.annotate("", (20, 52), (70, 52), arrowprops=dict(arrowstyle="<->", color=rojo, lw=1)); ax.text(45, 55, "320 px", ha="center", fontsize=8.5, color=rojo)
+    ax.annotate("", (20, 30), (26, 30), arrowprops=dict(arrowstyle="<->", color=rojo, lw=1)); ax.text(23, 28.3, "24", ha="center", fontsize=8, color=rojo)
+    ax.annotate("", (52, 34), (52, 42), arrowprops=dict(arrowstyle="<->", color=rojo, lw=1)); ax.text(53.5, 38, "44 px", fontsize=8, color=rojo, va="center")
+    notas = [(76, 16, "Título: 20/28 px, semibold,\ncolor-texto-principal"), (76, 30, "Botón: boton-primario,\nradio-control (8 px)"),
+             (76, 44, "Estados: reposo, foco,\npulsado, cargando, error")]
+    for x, y, t in notas:
+        ax.text(x, y, t, fontsize=8.5, color=TINTA, va="center")
+        ax.plot([x - 1, 71], [y, y], color=rojo, lw=.8, ls=":")
+    guardar(fig, "t11_especificacion.svg")
+
+
+def t1_decisiones():
+    fig, ax = plt.subplots(figsize=(9, 3.6)); ax.axis("off"); ax.set_xlim(0, 10); ax.set_ylim(0, 6.2)
+    preg = ["¿Encuentran la función?", "¿Entienden el flujo?", "¿Se lee bien el texto?", "¿Transmite confianza la marca?", "¿Se percibe rápida la respuesta?"]
+    vals = [(1, 1), (1, 1), (0, 1), (0, 1), (0, 1)]
+    ax.text(5.6, 5.8, "Baja", ha="center", fontsize=10.5, fontweight="bold", color=TINTA); ax.text(7.8, 5.8, "Alta", ha="center", fontsize=10.5, fontweight="bold", color=TINTA)
+    for i, (q, (b, a)) in enumerate(zip(preg, vals)):
+        y = 4.9 - i * 1.0
+        ax.add_patch(FancyBboxPatch((0.1, y - 0.42), 9.0, 0.84, boxstyle="round,pad=0,rounding_size=0.05", fc=CAJA if i % 2 == 0 else SUP, ec="none"))
+        ax.text(0.3, y, q, va="center", fontsize=10, color=TINTA)
+        for x, v in ((5.6, b), (7.8, a)):
+            ax.text(x, y, "✓ la valida" if v else "✗ no la valida", ha="center", va="center", fontsize=9.5, color="#0f6b45" if v else "#a52a1a")
+    guardar(fig, "t1_decisiones.svg")
+
 if __name__ == "__main__":
-    for f in (tema4, tema5, tema7, tema8, tema9):
+    for f in (tema4, tema5, tema7, tema8, tema9, t1_decisiones, t3_transicion, t6_iconos, t7_gestalt, t9_tokens, t11_especificacion):
         f()

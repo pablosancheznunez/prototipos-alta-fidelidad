@@ -81,6 +81,66 @@ Las animaciones de las microinteracciones deben ser breves y útiles, y respetar
 
 Toma una pantalla de un prototipo de baja fidelidad tuyo. Súbela a alta fidelidad por capas (tipografía, color, iconos) y, en cada capa, comprueba con su esquema original que la jerarquía no ha cambiado.
 
+![El mismo diseño en baja y en alta fidelidad.](figuras/t3_transicion.svg){#fig-t3-transicion fig-alt="Dos pantallas lado a lado. A la izquierda, un esquema gris con un recuadro tachado para la imagen, líneas grises de texto y un botón con la palabra Botón. A la derecha, la misma estructura con un título azul, una imagen de color, la referencia, el texto «Disponible, sala 2, estantería 4» en verde y un botón azul oscuro «Reservar»."}
+
+## Laboratorio: estados de un componente {#lab-t3-estados}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+Un componente de alta fidelidad no es una imagen: tiene **estados**. Prueba el botón con el ratón y **con el teclado** (tabulador para el foco, Intro o espacio para pulsarlo). Activa los estados que el diseño debe especificar y comprueba cómo se ven.
+
+```{ojs}
+//| echo: false
+seleccion = window.Lab.seleccion
+viewof estado_boton = seleccion("Estado forzado", [["reposo", "Reposo (interactivo)"], ["desactivado", "Desactivado"], ["cargando", "Cargando"], ["error", "Error"], ["exito", "Éxito"]], {value: "reposo"})
+```
+
+```{ojs}
+//| echo: false
+{
+  const e = estado_boton;
+  const etiqueta = {reposo: "Reservar", desactivado: "Reservar", cargando: "Reservando…", error: "Reintentar", exito: "Reservado ✓"}[e];
+  const ayuda = {reposo: "Pasa el ratón, pulsa o usa el tabulador: verás los estados :hover, :active y :focus-visible.",
+    desactivado: "Desactivado: no responde. Explica por qué cerca del botón («No se puede reservar: ya tienes 5 reservas»).",
+    cargando: "Cargando: evita el doble envío y comunica que el sistema trabaja (aria-busy).",
+    error: "Error: el mensaje dice qué pasó y la acción permite recuperarse.",
+    exito: "Éxito: confirma el resultado sin obligar a buscarlo."}[e];
+  const d = document.createElement("div"); d.className = "lab-estados";
+  const b = document.createElement("button"); b.type = "button"; b.className = "lab-boton lab-" + e;
+  if (e === "desactivado") b.disabled = true;
+  b.setAttribute("aria-busy", String(e === "cargando"));
+  if (e === "cargando") { const g = document.createElement("span"); g.className = "lab-giro"; g.setAttribute("aria-hidden", "true"); b.append(g); }
+  b.append(etiqueta); d.append(b);
+  if (e === "error") { const p = document.createElement("p"); p.className = "lab-mal small mt-1 mb-0"; p.textContent = "No se ha podido reservar: comprueba tu conexión."; d.append(p); }
+  const st = document.createElement("p"); st.className = "small mt-2"; st.setAttribute("role", "status"); st.textContent = ayuda; d.append(st);
+  let n = 0;
+  if (e === "reposo") b.onclick = () => { n++; st.textContent = `Pulsado ${n} ${n === 1 ? "vez" : "veces"}. ¿Has visto el cambio al pulsar y el anillo de foco con el teclado?`; };
+  return d;
+}
+```
+:::
+
+## Actividades
+
+::: {.clasificar #ia-t3a-cambia titulo="¿Se conserva o cambia al subir la fidelidad?" categorias="Se conserva|Cambia"}
+- La arquitectura de información validada → Se conserva
+- El orden de los pasos del flujo → Se conserva
+- La tipografía y el color → Cambia
+- Los textos provisionales por textos reales → Cambia
+- Las decisiones tomadas tras las pruebas con usuarios → Se conserva
+- El detalle de las microinteracciones → Cambia
+:::
+
+::: {.ordenar #ia-t3a-micro titulo="Las cuatro partes de una microinteracción (Saffer, 2013)"}
+1. Disparador: qué la inicia
+2. Reglas: qué ocurre
+3. Retroalimentación: cómo se percibe lo que ocurre
+4. Bucles y modos: qué pasa con el tiempo o en situaciones especiales
+:::
+
 ## Reto evaluable {#reto-t3}
 
 ::: {.callout-important appearance="simple" icon="false"}

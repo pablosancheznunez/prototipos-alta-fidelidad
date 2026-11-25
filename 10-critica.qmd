@@ -73,6 +73,51 @@ Un **facilitador** ayuda a que la sesión cumpla su objetivo: controla el tiempo
 
 En grupos de tres, cada persona presenta durante cinco minutos una pantalla de su proyecto siguiendo el guion del apartado 2. Las otras dos dan tres comentarios cada una con el esquema del apartado 3. Rotad los papeles de quien presenta, quien comenta y quien facilita.
 
+## Actividades
+
+::: {.clasificar #ia-t10a-comentarios titulo="¿Es un comentario útil en una crítica?" categorias="Útil|Poco útil"}
+- «No me gusta.» → Poco útil // No dice qué ni por qué.
+- «El botón de reservar compite con el de compartir: si el objetivo es reservar, ¿qué pasaría si el segundo fuera un enlace?» → Útil
+- «Yo lo haría en verde.» → Poco útil // Preferencia personal sin relación con el objetivo.
+- «Con este contraste, el texto gris de las fechas puede no llegar a 4,5:1.» → Útil
+- «Me pregunto si quien llega desde el correo sabrá en qué paso está.» → Útil
+- «Está perfecto.» → Poco útil
+:::
+
+::: {.ordenar #ia-t10a-sesion titulo="Ordena una sesión de crítica de diseño"}
+1. Quien presenta recuerda el objetivo y la fase del diseño
+2. Indica sobre qué quiere comentarios
+3. Muestra el diseño sin defenderlo
+4. El grupo hace preguntas de comprensión
+5. El grupo da comentarios ligados a los objetivos
+6. Quien presenta resume y decide qué hará
+:::
+
+::: {.escenario #ia-t10a-recibir titulo="Recibir una crítica dura"}
+En una crítica, un compañero dice: «El flujo de reserva es confuso, yo no lo usaría».
+
+### Primera reacción {#t10e-inicio}
+¿Qué respondes?
+
+- [«Lo he probado con cinco personas y les ha funcionado.»](#t10e-defiende)
+- [«¿En qué paso te has perdido?»](#t10e-pregunta)
+
+### A la defensiva {#t10e-defiende .final .mal}
+Quizá tengas razón, pero cierras la conversación y pierdes información. Primero entiende el comentario; después decide.
+
+### Pregunta para entender {#t10e-pregunta}
+Responde: «Al elegir la franja no sabía si ya estaba reservada o tenía que confirmar».
+
+- [Lo anoto y le pregunto qué esperaba ver](#t10e-bien)
+- [Le explico cómo funciona el paso de confirmación](#t10e-explica)
+
+### Explicar el diseño {#t10e-explica .final .regular}
+Si necesita explicación, el diseño tiene un problema. Anótalo en lugar de justificarlo.
+
+### Comentario convertido en hallazgo {#t10e-bien .final .bien}
+Has transformado una opinión en un problema concreto (falta retroalimentación tras elegir la franja) y una expectativa del usuario.
+:::
+
 ## Reto evaluable {#reto-t10}
 
 ::: {.callout-important appearance="simple" icon="false"}

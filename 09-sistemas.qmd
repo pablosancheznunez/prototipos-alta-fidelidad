@@ -79,6 +79,82 @@ Un sistema de diseño necesita **gobernanza**: quién decide qué entra, cómo s
 
 Elige un componente de Material Design 3 y otro del GOV.UK Design System (por ejemplo, el botón). Compara su documentación: variantes, estados, reglas de uso y accesibilidad. ¿Qué incluye uno que no incluya el otro?
 
+![Las tres capas de los *design tokens*: primitivos, semánticos y de componente.](figuras/t9_tokens.svg){#fig-t9-tokens fig-alt="Tres columnas de recuadros conectadas por flechas. Primitivos: azul-900 #000e78, gris-50 #f6f6f4, espacio-4 16 px, radio-2 8 px. Semánticos: color-accion apunta a azul-900, color-fondo a gris-50, espacio-componente a espacio-4, radio-control a radio-2. De componente: boton-fondo apunta a color-accion, boton-relleno a espacio-componente, boton-radio a radio-control, tarjeta-fondo a color-fondo."}
+
+## Laboratorio: explorador de *tokens* {#lab-t9-tokens}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+Edita los *tokens* (en JSON) y pulsa **Aplicar**: la tarjeta y el botón cambian a la vez, porque leen los mismos valores. El laboratorio comprueba además el contraste entre el texto del botón y su fondo.
+
+```{ojs}
+//| echo: false
+area = window.Lab.area
+viewof tokens_txt = area("Tokens (JSON)", {rows: 9, submit: "Aplicar", value: `{
+  "color-accion": "#000e78",
+  "color-sobre-accion": "#ffffff",
+  "color-fondo": "#f6f6f4",
+  "color-texto": "#1c1c1c",
+  "espacio": 16,
+  "radio": 8,
+  "tamano-texto": 16
+}`})
+```
+
+```{ojs}
+//| echo: false
+{
+  let t; try { t = JSON.parse(tokens_txt); } catch (e) { return html`<p role="status" class="lab-mal">El JSON no es válido: ${e.message}</p>`; }
+  const lin = c => c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+  const L = h => { const v = [1, 3, 5].map(i => lin(parseInt(String(h).slice(i, i + 2), 16) / 255)); return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]; };
+  const ratio = (a, b) => { const [x, y] = [L(a), L(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+  const ok = /^#[0-9a-f]{6}$/i;
+  for (const k of ["color-accion", "color-sobre-accion", "color-fondo", "color-texto"]) if (!ok.test(t[k] || "")) return html`<p role="status" class="lab-mal">Falta «${k}» o no es un color #rrggbb.</p>`;
+  const rb = ratio(t["color-accion"], t["color-sobre-accion"]), rt = ratio(t["color-texto"], t["color-fondo"]);
+  const e = +t["espacio"] || 16, r = +t["radio"] || 0, f = +t["tamano-texto"] || 16;
+  const d = html`<div role="status"></div>`;
+  d.innerHTML = `<div style="background:${t["color-fondo"]};color:${t["color-texto"]};padding:${e}px;border-radius:${r}px;max-width:22rem;font-size:${f}px;border:1px solid #ccc">
+    <div style="font-weight:600;font-size:${f * 1.25}px;margin-bottom:${e / 2}px">Sala de estudio 2</div>
+    <div style="margin-bottom:${e}px">Libre de 10:00 a 13:00</div>
+    <span style="display:inline-block;background:${t["color-accion"]};color:${t["color-sobre-accion"]};padding:${e / 2}px ${e}px;border-radius:${r}px;font-weight:600">Reservar</span></div>
+   <p class="mt-2">Botón: <strong>${rb.toFixed(2).replace(".", ",")}:1</strong> <span class="${rb >= 4.5 ? "lab-bien" : "lab-mal"}" style="font-weight:600">${rb >= 4.5 ? "✓ AA" : "✗ no llega a 4,5:1"}</span> ·
+   Texto: <strong>${rt.toFixed(2).replace(".", ",")}:1</strong> <span class="${rt >= 4.5 ? "lab-bien" : "lab-mal"}" style="font-weight:600">${rt >= 4.5 ? "✓ AA" : "✗ no llega a 4,5:1"}</span></p>`;
+  return d;
+}
+```
+
+**Prueba:** cambia `color-accion` a `#2a78d6`. El botón sigue siendo legible con texto blanco, pero ¿cumple 4,5:1?
+:::
+
+## Actividades
+
+::: {.ordenar #ia-t9a-atomico titulo="Los niveles del diseño atómico (Frost, 2016), de menor a mayor"}
+1. Átomos (un botón, una etiqueta)
+2. Moléculas (un campo de búsqueda con su botón)
+3. Organismos (una cabecera completa)
+4. Plantillas (la estructura de una página)
+5. Páginas (la plantilla con contenido real)
+:::
+
+::: {.clasificar #ia-t9a-capa titulo="¿Qué capa de token es?" categorias="Primitivo|Semántico|De componente"}
+- `azul-900: #000e78` → Primitivo
+- `color-error: rojo-700` → Semántico
+- `boton-primario-fondo: color-accion` → De componente
+- `espacio-8: 32px` → Primitivo
+- `color-texto-secundario: gris-700` → Semántico
+- `tarjeta-sombra: sombra-2` → De componente
+:::
+
+::: {.clasificar #ia-t9a-gobernanza titulo="¿Buena gobernanza del sistema?" categorias="Sí|No"}
+- Un registro de cambios con versiones semánticas → Sí
+- Cada equipo crea su propio botón «porque es un caso especial» → No
+- Un canal para proponer componentes nuevos y criterios para aceptarlos → Sí
+- La documentación solo vive en la cabeza de quien creó el sistema → No
+:::
+
 ## Reto evaluable {#reto-t9}
 
 ::: {.callout-important appearance="simple" icon="false"}
