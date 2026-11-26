@@ -30,12 +30,12 @@ Frost, B. (2016). [*Atomic design*](https://atomicdesign.bradfrost.com/). Libro 
 
 ### Lecturas complementarias {.unnumbered}
 
-- Churchill, E. F. (2019). [Scaling UX with design systems](https://doi.org/10.1145/3352681). *Interactions*, 26(5), 22-23. Los sistemas de diseño como infraestructura de la organización.
+- @churchill2019 — Los sistemas de diseño como infraestructura de la organización.
 - Material Design 3 y [Apple Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/): dos sistemas de plataforma de referencia.
 
 ## 1. Qué es un sistema de diseño
 
-Un **sistema de diseño** es el conjunto de principios, estilos, componentes reutilizables, patrones y documentación con el que una organización diseña y construye sus productos de forma coherente. No es solo una biblioteca de Figma: incluye el **código** de los componentes y las **reglas** de uso. Churchill (2019) lo describe como la forma de que la experiencia de usuario **escale** cuando muchos equipos trabajan a la vez.
+Un **sistema de diseño** es el conjunto de principios, estilos, componentes reutilizables, patrones y documentación con el que una organización diseña y construye sus productos de forma coherente. No es solo una biblioteca de Figma: incluye el **código** de los componentes y las **reglas** de uso. @churchill2019 lo describe como la forma de que la experiencia de usuario **escale** cuando muchos equipos trabajan a la vez.
 
 Sus beneficios: **coherencia** entre productos y pantallas, **eficiencia** (no se diseña dos veces lo mismo), **calidad** (cada componente se prueba una vez, también en accesibilidad) y un **lenguaje común** entre diseño y desarrollo.
 
@@ -53,7 +53,7 @@ Los ***tokens*** separan el valor (un color concreto) de su función (la acción
 
 ## 3. Diseño atómico
 
-Frost (2016) propone construir las interfaces de abajo arriba en cinco niveles, con una metáfora química:
+@frost2016 propone construir las interfaces de abajo arriba en cinco niveles, con una metáfora química:
 
 1. **Átomos**: los elementos mínimos (una etiqueta, un campo, un botón).
 2. **Moléculas**: grupos sencillos con una función (un buscador: etiqueta, campo y botón).
@@ -61,7 +61,7 @@ Frost (2016) propone construir las interfaces de abajo arriba en cinco niveles, 
 4. **Plantillas**: la estructura de una página con los organismos colocados.
 5. **Páginas**: las plantillas con contenido real, donde se comprueba que todo funciona.
 
-![Los cinco niveles del diseño atómico de Frost (2016), con un ejemplo del catálogo de una biblioteca en cada uno.](figuras/tema9_atomico.svg){#fig-atomico fig-alt="Cinco columnas de izquierda a derecha, cada una más grande que la anterior: átomos (un botón, un campo, una etiqueta), moléculas (un buscador), organismos (una cabecera con buscador), plantillas (la estructura de la página de resultados) y páginas (la página de resultados con libros reales)."}
+![Los cinco niveles del diseño atómico de @frost2016, con un ejemplo del catálogo de una biblioteca en cada uno.](figuras/tema9_atomico.svg){#fig-atomico fig-alt="Cinco columnas de izquierda a derecha, cada una más grande que la anterior: átomos (un botón, un campo, una etiqueta), moléculas (un buscador), organismos (una cabecera con buscador), plantillas (la estructura de la página de resultados) y páginas (la página de resultados con libros reales)."}
 
 ## 4. Sistemas de referencia
 
@@ -159,7 +159,7 @@ Nombres por función (`fondo`, `superficie`, `texto`, `texto-secundario`, `prima
 
 ## Actividades
 
-::: {.ordenar #ia-t9a-atomico titulo="Los niveles del diseño atómico (Frost, 2016), de menor a mayor"}
+::: {.ordenar #ia-t9a-atomico titulo="Los niveles del diseño atómico [@frost2016], de menor a mayor"}
 1. Átomos (un botón, una etiqueta)
 2. Moléculas (un campo de búsqueda con su botón)
 3. Organismos (una cabecera completa)

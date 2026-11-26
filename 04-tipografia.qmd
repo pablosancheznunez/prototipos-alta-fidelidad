@@ -31,8 +31,8 @@ Dyson, M. C. (2004). [How physical text layout affects reading from screen](http
 
 ### Lecturas complementarias {.unnumbered}
 
-- Lupton, E. (2024). *Pensar con tipos* (ed. de D. Giménez). Gustavo Gili. Fundamentos de tipografía (bibliografía complementaria de la asignatura).
-- Material Design 3. [Typography](https://m3.material.io/styles/typography/overview). Una escala tipográfica de sistema documentada.
+- @lupton2024 — Fundamentos de tipografía (bibliografía complementaria de la asignatura).
+- @materialdesign3sf — Una escala tipográfica de sistema documentada.
 
 ## 1. Elegir la familia tipográfica
 
@@ -56,7 +56,7 @@ La jerarquía no se construye solo con el tamaño: también con el **peso** (reg
 ## 3. Espaciado y longitud de línea
 
 - **Interlineado**: para el texto de lectura, en torno a 1,5 veces el tamaño de la letra; los titulares necesitan menos. Las WCAG exigen que el contenido siga funcionando si la persona aumenta el interlineado hasta 1,5 y el espacio entre párrafos hasta 2 veces el tamaño.
-- **Longitud de línea**: Dyson (2004) revisó la investigación sobre la lectura en pantalla y encontró que las líneas largas se leen algo más rápido, pero que las personas prefieren longitudes moderadas. Como regla práctica de diseño se usan de 45 a 75 caracteres por línea para el texto de lectura.
+- **Longitud de línea**: @dyson2004 revisó la investigación sobre la lectura en pantalla y encontró que las líneas largas se leen algo más rápido, pero que las personas prefieren longitudes moderadas. Como regla práctica de diseño se usan de 45 a 75 caracteres por línea para el texto de lectura.
 - **Tamaño**: 16 px es el tamaño de referencia del texto de los navegadores; el texto de lectura no debería ser menor en móvil.
 - **Unidades relativas** (rem): permiten que la interfaz respete el tamaño de letra que la persona ha elegido en su sistema.
 

@@ -32,9 +32,9 @@ Houde, S.; Hill, C. (1997). [What do prototypes prototype?](https://doi.org/10.1
 
 ### Lecturas complementarias {.unnumbered}
 
-- Lim, Y.-K.; Stolterman, E.; Tenenberg, J. (2008). [The anatomy of prototypes](https://doi.org/10.1145/1375761.1375762). *ACM Transactions on Computer-Human Interaction*, 15(2), 1-27. Los prototipos como filtros de cualidades del diseño.
-- Rudd, J.; Stern, K.; Isensee, S. (1996). [Low vs. high-fidelity prototyping debate](https://doi.org/10.1145/223500.223514). *Interactions*, 3(1), 76-85. Ventajas e inconvenientes de cada fidelidad.
-- Walker, M.; Takayama, L.; Landay, J. A. (2002). [High-fidelity or low-fidelity, paper or computer?](https://doi.org/10.1177/154193120204600513) *Proceedings of the HFES Annual Meeting*, 46(5), 661-665.
+- @lim2008 — Los prototipos como filtros de cualidades del diseño.
+- @rudd1996 — Ventajas e inconvenientes de cada fidelidad.
+- @walker2002
 
 ## 1. Qué es la alta fidelidad
 
@@ -44,7 +44,7 @@ Lo que define un buen prototipo no es su fidelidad, sino que sea **el más barat
 
 ## 2. Qué decisiones valida
 
-Houde y Hill (1997) distinguen tres aspectos que puede explorar un prototipo: el **papel** del producto en la vida de las personas, su **apariencia y sensación** (*look and feel*) y su **implementación**. La alta fidelidad es el terreno de la apariencia y la sensación, y empieza a tocar la implementación.
+@houde1997 distinguen tres aspectos que puede explorar un prototipo: el **papel** del producto en la vida de las personas, su **apariencia y sensación** (*look and feel*) y su **implementación**. La alta fidelidad es el terreno de la apariencia y la sensación, y empieza a tocar la implementación.
 
 | Pregunta | ¿Hace falta alta fidelidad? |
 |---|---|
@@ -159,7 +159,7 @@ Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde l
 :::
 
 ::: {.webex-solution boton="Ver explicaciones"}
-- La fidelidad tiene varias dimensiones independientes (Lim et al., 2008).
+- La fidelidad tiene varias dimensiones independientes [@lim2008].
 - El flujo se valida antes y más barato en baja fidelidad.
 - La alta fidelidad es el terreno de la apariencia y la sensación.
 - Maqueta (*mockup*): aspecto final, sin interacción.

@@ -30,8 +30,8 @@ Virzi, R. A.; Sokolov, J. L.; Karis, D. (1996). [Usability problem identificatio
 
 ### Lecturas complementarias {.unnumbered}
 
-- Saffer, D. (2013). *Microinteractions: Designing with details*. O'Reilly. El modelo de cuatro partes de este tema (bibliografía complementaria de la asignatura).
-- Buxton, W. (2007). *Sketching user experiences*. Elsevier. El paso del boceto al prototipo.
+- @saffer2013 — El modelo de cuatro partes de este tema (bibliografía complementaria de la asignatura).
+- @buxton2007 — El paso del boceto al prototipo.
 
 ## 1. Qué se conserva y qué cambia
 
@@ -61,7 +61,7 @@ Al pulir, es fácil que una decisión visual contradiga, sin querer, una decisi�
 
 ## 4. Microinteracciones
 
-Una **microinteracción** es un momento de interacción con un solo propósito: marcar un favorito, activar un ajuste, recibir la confirmación de una reserva. Saffer (2013) describe cuatro partes:
+Una **microinteracción** es un momento de interacción con un solo propósito: marcar un favorito, activar un ajuste, recibir la confirmación de una reserva. @saffer2013 describe cuatro partes:
 
 1. **Disparador**: lo que la inicia (una acción de la persona o una condición del sistema).
 2. **Reglas**: qué ocurre y en qué orden.
@@ -224,7 +224,7 @@ Debe justificar cada decisión con un principio (contraste, consistencia, escala
 - El detalle de las microinteracciones → Cambia
 :::
 
-::: {.ordenar #ia-t3a-micro titulo="Las cuatro partes de una microinteracción (Saffer, 2013)"}
+::: {.ordenar #ia-t3a-micro titulo="Las cuatro partes de una microinteracción [@saffer2013]"}
 1. Disparador: qué la inicia
 2. Reglas: qué ocurre
 3. Retroalimentación: cómo se percibe lo que ocurre

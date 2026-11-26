@@ -29,7 +29,7 @@ Esfuerzo, en tiempo y en apego del equipo, que supone modificar un diseño; crec
 *Mockup*. Representación estática de una pantalla con su aspecto visual definitivo y sin interacción. → [Tema 2](02-maquetas.qmd)
 
 ### Primera impresión {#gl-primera-impresion}
-Valoración del atractivo visual que se forma en unos 50 ms (Lindgaard et al., 2006). → [Tema 2](02-maquetas.qmd)
+Valoración del atractivo visual que se forma en unos 50 ms [@lindgaard2006]. → [Tema 2](02-maquetas.qmd)
 
 ### Contenido real {#gl-contenido-real}
 Textos, nombres, cifras e imágenes reales o realistas en lugar de texto de relleno. → [Tema 2](02-maquetas.qmd)
@@ -52,7 +52,7 @@ Lo que el diseño pretende conseguir: estructura, jerarquía y flujo validados. 
 Tabla con la fecha, la decisión, el motivo, la evidencia y las pantallas afectadas. → [Tema 3](03-transicion.qmd)
 
 ### Microinteracción {#gl-microinteraccion}
-Momento de interacción con un solo propósito, con disparador, reglas, retroalimentación y bucles (Saffer, 2013). → [Tema 3](03-transicion.qmd)
+Momento de interacción con un solo propósito, con disparador, reglas, retroalimentación y bucles [@saffer2013]. → [Tema 3](03-transicion.qmd)
 
 ### Disparador {#gl-disparador}
 Lo que inicia una microinteracción: una acción de la persona o una condición del sistema. → [Tema 3](03-transicion.qmd)
@@ -115,7 +115,7 @@ Conjunto de iconos con las mismas reglas de estilo. → [Tema 6](06-iconografia.
 Cuadrícula común sobre la que se dibujan todos los iconos de un sistema. → [Tema 6](06-iconografia.qmd)
 
 ### Distancia semántica {#gl-distancia}
-Cuánto se aleja la imagen de un icono de lo que significa (McDougall et al., 1999). → [Tema 6](06-iconografia.qmd)
+Cuánto se aleja la imagen de un icono de lo que significa [@mcdougall1999]. → [Tema 6](06-iconografia.qmd)
 
 ### Concreción {#gl-concrecion}
 Grado en que un icono representa un objeto reconocible. → [Tema 6](06-iconografia.qmd)
@@ -138,7 +138,7 @@ Reparto compensado del peso visual en la composición. → [Tema 7](07-composici
 Repetición regular de elementos y espacios. → [Tema 7](07-composicion.qmd)
 
 ### Estética clásica y expresiva {#gl-clasica}
-Dos dimensiones de la estética percibida: orden y claridad, frente a creatividad y originalidad (Lavie y Tractinsky, 2004). → [Tema 7](07-composicion.qmd)
+Dos dimensiones de la estética percibida: orden y claridad, frente a creatividad y originalidad [@lavie2004]. → [Tema 7](07-composicion.qmd)
 
 ### Diseño adaptable {#gl-adaptable}
 *Responsive*. Diseño que reorganiza la composición según el tamaño de la pantalla. → [Tema 7](07-composicion.qmd)
@@ -158,7 +158,7 @@ Espacio entre las grandes partes de la composición: márgenes, secciones, módu
 Espacio a escala fina: interlineado, relleno de botones, distancia entre etiqueta y campo. → [Tema 8](08-espacio.qmd)
 
 ### Complejidad visual {#gl-complejidad}
-Cantidad y variedad de elementos visuales; la baja complejidad mejora la primera impresión (Tuch et al., 2012). → [Tema 8](08-espacio.qmd)
+Cantidad y variedad de elementos visuales; la baja complejidad mejora la primera impresión [@tuch2012]. → [Tema 8](08-espacio.qmd)
 
 ### Densidad de información {#gl-densidad}
 Cantidad de información por unidad de espacio, que debe ajustarse a la tarea y la frecuencia de uso. → [Tema 8](08-espacio.qmd)
@@ -178,7 +178,7 @@ Colección de componentes reutilizables con sus variantes y estados. → [Tema 9
 Decisión de estilo con nombre funcional, independiente de la herramienta. → [Tema 9](09-sistemas.qmd)
 
 ### Diseño atómico {#gl-atomico}
-Método de Frost (2016) que construye las interfaces en cinco niveles: átomos, moléculas, organismos, plantillas y páginas. → [Tema 9](09-sistemas.qmd)
+Método de @frost2016 que construye las interfaces en cinco niveles: átomos, moléculas, organismos, plantillas y páginas. → [Tema 9](09-sistemas.qmd)
 
 ### Variante {#gl-variante}
 Versión de un componente para un uso (primario, secundario) o un tamaño. → [Tema 9](09-sistemas.qmd)
@@ -215,7 +215,7 @@ Documentación precisa de flujos, estilos, componentes, estados, interacciones, 
 Nota en el diseño que explica un comportamiento, una regla o un caso límite que el dibujo no muestra. → [Tema 11](11-entrega.qmd)
 
 ### Ruptura de diseño {#gl-ruptura-diseno}
-*Design breakdown*. Punto en el que el diseño no basta para que el desarrollo lo interprete correctamente (Maudet et al., 2017). → [Tema 11](11-entrega.qmd)
+*Design breakdown*. Punto en el que el diseño no basta para que el desarrollo lo interprete correctamente [@maudet2017]. → [Tema 11](11-entrega.qmd)
 
 ### Control de versiones {#gl-versiones}
 Organización de los archivos de diseño para que todos trabajen sobre la versión correcta. → [Tema 11](11-entrega.qmd)

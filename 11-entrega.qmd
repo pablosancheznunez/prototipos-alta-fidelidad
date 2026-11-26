@@ -30,12 +30,12 @@ Maudet, N.; Leiva, G.; Beaudouin-Lafon, M.; Mackay, W. (2017). [Design breakdown
 
 ### Lecturas complementarias {.unnumbered}
 
-- Figma. [Dev Mode](https://help.figma.com/hc/en-us/articles/15023124644247-Guide-to-Dev-Mode). Inspección y especificaciones para desarrollo.
+- @figmasf — Inspección y especificaciones para desarrollo.
 - Material Design 3 y otros sistemas: cómo documentan sus componentes para el desarrollo.
 
 ## 1. El traspaso no es un momento, es una relación
 
-El **traspaso** (*handoff*) es el paso del diseño al equipo que lo construye. Maudet et al. (2017) estudiaron cómo colaboran diseñadores y desarrolladores y describieron las **rupturas de diseño** (*design breakdowns*): los puntos en los que lo que el diseño representa no basta para que el desarrollo lo interprete correctamente. Identificaron tres tipos recurrentes: **omitir detalles críticos** (cómo se comporta algo, qué pasa con los datos reales), **ignorar los casos límite** (textos larguísimos, listas vacías, errores) y **no tener en cuenta las limitaciones técnicas** (algo que no se puede construir como está dibujado).
+El **traspaso** (*handoff*) es el paso del diseño al equipo que lo construye. @maudet2017 estudiaron cómo colaboran diseñadores y desarrolladores y describieron las **rupturas de diseño** (*design breakdowns*): los puntos en los que lo que el diseño representa no basta para que el desarrollo lo interprete correctamente. Identificaron tres tipos recurrentes: **omitir detalles críticos** (cómo se comporta algo, qué pasa con los datos reales), **ignorar los casos límite** (textos larguísimos, listas vacías, errores) y **no tener en cuenta las limitaciones técnicas** (algo que no se puede construir como está dibujado).
 
 También observaron que implicar pronto al equipo de desarrollo reducía esas rupturas, aunque surgían otras nuevas a medida que avanzaba el proyecto. La conclusión práctica es que el traspaso funciona mejor como una **colaboración continua** que como una entrega única al final.
 

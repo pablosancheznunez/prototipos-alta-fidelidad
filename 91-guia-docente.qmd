@@ -26,6 +26,8 @@ Las soluciones de referencia y los criterios de corrección de los retos no est�
 
 Las preguntas de autoevaluación de cada tema están exportadas a **Moodle XML** en la carpeta `moodle/` del repositorio: un fichero por tema y uno con todo el banco. Se importan desde *Banco de preguntas → Importar → Formato Moodle XML*. Cada pregunta conserva su explicación como retroalimentación general.
 
+**Descarga el banco de preguntas:** [todo el libro (Moodle XML)](moodle/autoevaluacion_todo.xml) · por capítulo: [00](moodle/autoevaluacion_00_r_en_el_libro.xml) · [01](moodle/autoevaluacion_01_fundamentos.xml) · [02](moodle/autoevaluacion_02_maquetas.xml) · [03](moodle/autoevaluacion_03_transicion.xml) · [04](moodle/autoevaluacion_04_tipografia.xml) · [05](moodle/autoevaluacion_05_color.xml) · [06](moodle/autoevaluacion_06_iconografia.xml) · [07](moodle/autoevaluacion_07_composicion.xml) · [08](moodle/autoevaluacion_08_espacio.xml) · [09](moodle/autoevaluacion_09_sistemas.xml) · [10](moodle/autoevaluacion_10_critica.xml) · [11](moodle/autoevaluacion_11_entrega.xml)
+
 ## El papel de R
 
 El libro usa R lo imprescindible: tres temas tienen ejercicios breves de completar huecos con funciones del libro (escala tipográfica y longitud de línea, contraste y daltonismo, rejillas). El capítulo [Usar R en este libro](00-r-en-el-libro.qmd) basta como preparación. Ningún reto exige programar.

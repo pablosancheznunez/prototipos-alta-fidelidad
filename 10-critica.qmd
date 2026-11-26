@@ -30,12 +30,12 @@ Dannels, D. P.; Martin, K. N. (2008). [Critiquing critiques: A genre analysis of
 
 ### Lecturas complementarias {.unnumbered}
 
-- Nielsen Norman Group. [Design critiques: Encourage a positive culture to improve products](https://www.nngroup.com/articles/design-critiques/). Guía práctica para el trabajo en equipo.
-- Buxton, W. (2007). *Sketching user experiences*. Elsevier. El papel de la crítica en el proceso de diseño.
+- @nielsennormangroupsfa — Guía práctica para el trabajo en equipo.
+- @buxton2007 — El paso del boceto al prototipo.
 
 ## 1. Qué es una crítica de diseño
 
-Una **crítica de diseño** (*design crit*) es una sesión en la que un equipo analiza un diseño en curso para mejorarlo. No es una votación ni una aprobación: su objetivo es **entender si el diseño cumple sus objetivos** y descubrir problemas a tiempo. Dannels y Martin (2008) analizaron las críticas en estudios de diseño, desde principiantes hasta expertos, y las describieron como un género de comunicación propio, con distintos formatos (críticas en la mesa de trabajo, en grupo, ante un tribunal) y con convenciones que hay que aprender.
+Una **crítica de diseño** (*design crit*) es una sesión en la que un equipo analiza un diseño en curso para mejorarlo. No es una votación ni una aprobación: su objetivo es **entender si el diseño cumple sus objetivos** y descubrir problemas a tiempo. @dannels2008 analizaron las críticas en estudios de diseño, desde principiantes hasta expertos, y las describieron como un género de comunicación propio, con distintos formatos (críticas en la mesa de trabajo, en grupo, ante un tribunal) y con convenciones que hay que aprender.
 
 ## 2. Preparar y presentar
 

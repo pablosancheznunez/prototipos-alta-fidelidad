@@ -30,8 +30,8 @@ McDougall, S. J. P.; Curry, M. B.; de Bruijn, O. (1999). [Measuring symbol and i
 
 ### Lecturas complementarias {.unnumbered}
 
-- Material Design 3. [Icons](https://m3.material.io/styles/icons/overview). Un sistema de iconos documentado.
-- Apple Human Interface Guidelines. [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/sf-symbols). Iconos alineados con la tipografía.
+- @materialdesign3sfa — Un sistema de iconos documentado.
+- @applehumaninterfacegsf — Iconos alineados con la tipografía.
 
 ## 1. Para qué sirve un icono
 

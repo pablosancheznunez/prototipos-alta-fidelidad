@@ -31,12 +31,12 @@ Lavie, T.; Tractinsky, N. (2004). [Assessing dimensions of perceived visual aest
 
 ### Lecturas complementarias {.unnumbered}
 
-- Lidwell, W.; Holden, K.; Butler, J. (2011). *Principios universales de diseño*. Blume. Entradas sobre alineación, proximidad, simetría y proporción áurea.
-- Nielsen Norman Group. [Using grids in interface designs](https://www.nngroup.com/articles/using-grids-in-interface-designs/). Rejillas en interfaces.
+- @lidwell2011 — Entrada sobre el efecto de estética-usabilidad (bibliografía complementaria de la asignatura).
+- @nielsennormangroupsf
 
 ## 1. Qué hace que una composición funcione
 
-Lavie y Tractinsky (2004) estudiaron cómo perciben las personas la estética de los sitios web y encontraron dos dimensiones: la **estética clásica** (orden, claridad, limpieza, simetría) y la **estética expresiva** (creatividad, originalidad, sofisticación). La composición trabaja sobre todo la primera: una interfaz ordenada se percibe como clara y fácil. La segunda depende de la identidad visual y conviene dosificarla donde no estorbe a la tarea.
+@lavie2004 estudiaron cómo perciben las personas la estética de los sitios web y encontraron dos dimensiones: la **estética clásica** (orden, claridad, limpieza, simetría) y la **estética expresiva** (creatividad, originalidad, sofisticación). La composición trabaja sobre todo la primera: una interfaz ordenada se percibe como clara y fácil. La segunda depende de la identidad visual y conviene dosificarla donde no estorbe a la tarea.
 
 ## 2. Rejillas
 

@@ -30,8 +30,8 @@ Lindgaard, G.; Fernandes, G.; Dudek, C.; Brown, J. (2006). [Attention web design
 
 ### Lecturas complementarias {.unnumbered}
 
-- Lidwell, W.; Holden, K.; Butler, J. (2011). *Principios universales de diseño*. Blume. Entrada sobre el efecto de estética-usabilidad (bibliografía complementaria de la asignatura).
-- Tuch, A. N. et al. (2012). [The role of visual complexity and prototypicality regarding first impression of websites](https://doi.org/10.1016/j.ijhcs.2012.06.003). *International Journal of Human-Computer Studies*, 70(11), 794-811. Qué explica la primera impresión.
+- @lidwell2011 — Entrada sobre el efecto de estética-usabilidad (bibliografía complementaria de la asignatura).
+- @tuch2012 — Qué explica la primera impresión.
 
 ## 1. Qué es una maqueta
 
@@ -46,7 +46,7 @@ Una **maqueta** (*mockup*) es una representación estática de una pantalla con 
 
 ## 2. Por qué importa el aspecto
 
-Lindgaard et al. (2006) mostraron páginas web durante solo **50 milisegundos** y comprobaron que las valoraciones de atractivo visual eran muy parecidas a las que se daban tras mirarlas más tiempo. La primera impresión visual se forma casi al instante. Tuch et al. (2012) encontraron que las páginas con **baja complejidad visual** y **alta prototipicidad** (que se parecen a lo que se espera de ese tipo de sitio) causan mejor primera impresión.
+@lindgaard2006 mostraron páginas web durante solo **50 milisegundos** y comprobaron que las valoraciones de atractivo visual eran muy parecidas a las que se daban tras mirarlas más tiempo. La primera impresión visual se forma casi al instante. @tuch2012 encontraron que las páginas con **baja complejidad visual** y **alta prototipicidad** (que se parecen a lo que se espera de ese tipo de sitio) causan mejor primera impresión.
 
 Además, varios estudios han descrito un **efecto de estética-usabilidad**: las interfaces que se perciben como atractivas tienden a percibirse también como más fáciles de usar. Es una buena noticia para el diseño visual cuidado, y un aviso para las pruebas: una maqueta bonita puede ocultar problemas de uso.
 
@@ -135,7 +135,7 @@ Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde l
 
 ::: {.webex-check .webex-box}
 1. Una maqueta incluye interacción con estados y transiciones. {{< torf false >}}
-2. Lindgaard et al. (2006) mostraron que las valoraciones de atractivo visual se forman en unos {{< mcq "5 segundos" "*50 milisegundos" "5 minutos" >}}
+2. @lindgaard2006 mostraron que las valoraciones de atractivo visual se forman en unos {{< mcq "5 segundos" "*50 milisegundos" "5 minutos" >}}
 3. Según Tuch et al., causan mejor primera impresión las páginas con complejidad visual {{< mcq "*baja" "alta" >}}
 4. Usar texto de relleno («lorem ipsum») en una maqueta ayuda a detectar problemas de longitud de los textos. {{< torf false >}}
 5. ¿Qué describe el efecto de estética-usabilidad?

@@ -30,12 +30,12 @@ Tuch, A. N.; Presslaber, E. E.; Stöcklin, M.; Opwis, K.; Bargas-Avila, J. A. (2
 
 ### Lecturas complementarias {.unnumbered}
 
-- Lindgaard, G. et al. (2006). [Attention web designers: You have 50 milliseconds to make a good first impression!](https://doi.org/10.1080/01449290500330448) *Behaviour & Information Technology*, 25(2), 115-126.
-- Lidwell, W.; Holden, K.; Butler, J. (2011). *Principios universales de diseño*. Blume. Entradas sobre la proximidad y la relación figura-fondo.
+- @lindgaard2006
+- @lidwell2011 — Entrada sobre el efecto de estética-usabilidad (bibliografía complementaria de la asignatura).
 
 ## 1. El espacio no es lo que sobra
 
-El **espacio negativo** (o espacio en blanco, aunque no sea blanco) es la parte de la composición que no ocupa ningún elemento. No es espacio desperdiciado: separa, agrupa, da ritmo, dirige la mirada y transmite calma y calidad. Tuch et al. (2012) mostraron que las páginas con **baja complejidad visual** causan mejor primera impresión, y el espacio es la herramienta más directa para reducir esa complejidad sin quitar contenido.
+El **espacio negativo** (o espacio en blanco, aunque no sea blanco) es la parte de la composición que no ocupa ningún elemento. No es espacio desperdiciado: separa, agrupa, da ritmo, dirige la mirada y transmite calma y calidad. @tuch2012 mostraron que las páginas con **baja complejidad visual** causan mejor primera impresión, y el espacio es la herramienta más directa para reducir esa complejidad sin quitar contenido.
 
 ## 2. Macroespacio y microespacio
 

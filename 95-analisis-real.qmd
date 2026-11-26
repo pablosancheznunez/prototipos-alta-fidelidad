@@ -1,0 +1,77 @@
+---
+engine: markdown
+---
+
+# Análisis de servicios reales {#sec-analisis-real}
+
+Estos ejercicios aplican las herramientas del libro a **servicios públicos reales**, muchos de los cuales publican su sistema de diseño. Comparar lo que ves con lo que el equipo documenta es una de las mejores formas de aprender diseño de alta fidelidad.
+
+::: {.callout-important}
+## Normas para trabajar con servicios reales
+- **Analiza, no juzgues de antemano.** El objetivo es entender las decisiones de diseño y sus consecuencias, no buscar culpables. Los servicios cambian: anota la fecha de tu análisis.
+- **No entregues capturas de pantalla de terceros.** Redibuja lo que necesites en baja fidelidad (cajas, textos clave): es mejor ejercicio y evita problemas de derechos.
+- **No introduzcas datos personales reales** ni completes trámites. Detente antes del paso que enviaría información.
+- **Comprueba si el servicio ya publica su documentación de diseño**: muchos organismos públicos lo hacen, y es una fuente excelente para contrastar tu análisis.
+:::
+
+## Ejercicio 1 · Leer un sistema de diseño público
+
+**Recurso:** el [GOV.UK Design System](https://design-system.service.gov.uk/). **Temas:** 9 (componentes) y 11 (especificación).
+
+**Tarea.** Elige un componente (por ejemplo, [Error summary](https://design-system.service.gov.uk/components/error-summary/) o [Radios](https://design-system.service.gov.uk/components/radios/)).
+
+1. Resume en una tabla qué documenta el equipo: cuándo usarlo, cuándo no, variantes, estados, accesibilidad e investigación que lo respalda.
+2. Compara esa documentación con la plantilla de especificación del libro (`plantillas/especificacion-componente.md`): ¿qué apartados tiene uno y no el otro?
+3. Redacta la especificación de un componente de tu proyecto con lo que hayas aprendido.
+
+**Entrega:** tabla comparativa y especificación propia.
+
+## Ejercicio 2 · Auditoría de accesibilidad con teclado y zoom
+
+**Servicio:** una página de búsqueda de [datos.gob.es](https://datos.gob.es/) o de la sede de una universidad. **Temas:** 5 (color accesible) y 11 (lista de comprobación WCAG 2.2).
+
+**Tarea.** Sin ratón, completa una búsqueda y abre un resultado. Después repite con el zoom del navegador al 200 % y en una ventana de 320 píxeles de ancho.
+
+1. Anota el **orden de foco**: ¿sigue el orden visual? ¿Se ve siempre dónde está el foco?
+2. Comprueba los criterios de la lista WCAG 2.2 del libro que puedas verificar sin herramientas especiales.
+3. Mide con un comprobador de contraste dos combinaciones de texto y fondo.
+4. Clasifica cada hallazgo por criterio WCAG y nivel (A, AA).
+
+**Entrega:** tabla de hallazgos con criterio, evidencia (redibujada) y propuesta.
+
+## Ejercicio 3 · Inventario de estados y microinteracciones
+
+**Servicio:** el buscador de [Europeana](https://www.europeana.eu/es). **Tema:** 3 (de la baja a la alta fidelidad: microinteracciones).
+
+**Tarea.** Documenta los **estados** de los filtros y de los resultados: reposo, *hover*, foco, seleccionado, cargando, sin resultados y error de conexión (si puedes provocarlo desconectando la red).
+
+1. Para cada microinteracción, describe disparador, reglas, retroalimentación y bucles (modelo de Saffer).
+2. Indica qué estados no has podido observar y cómo los diseñarías.
+3. Prototipa en tu herramienta habitual uno de los estados que falten.
+
+**Entrega:** inventario de estados y el prototipo.
+
+## Ejercicio 4 · Escala tipográfica y retícula
+
+**Servicio:** la portada de un ministerio o de un organismo público de tu elección. **Temas:** 4 (tipografía), 7 (composición) y 8 (espacio).
+
+**Tarea.** Usa las herramientas de desarrollo del navegador para extraer los **tamaños de letra**, interlineados y márgenes de los encabezados, el texto y los botones.
+
+1. Ordena los tamaños y calcula la razón entre niveles consecutivos: ¿siguen una escala modular?
+2. Identifica la retícula (columnas, medianil, márgenes) a dos anchos de pantalla.
+3. Traduce lo observado a **tokens de diseño** con nombre (`font-size-h1`, `space-m`…).
+4. Propón una escala alternativa con el laboratorio tipográfico del Tema 4 y justifica el cambio.
+
+**Entrega:** tabla de tokens, retícula dibujada y la propuesta.
+
+## Rúbrica
+
+| Criterio | Insuficiente (0-4) | Suficiente (5-6) | Notable (7-8) | Sobresaliente (9-10) |
+|---|---|---|---|---|
+| **Evidencia** | Opiniones sin pasos ni datos | Describe lo que hizo | Registra pasos, tiempos y pantallas redibujadas | Registro completo y reproducible por otra persona |
+| **Análisis** | Lista de gustos | Identifica aspectos con nombre | Relaciona cada hallazgo con un principio del libro | Distingue hallazgos por gravedad y frecuencia |
+| **Propuesta** | Sin propuesta | Propone cambios genéricos | Propuesta concreta en baja fidelidad | Propuesta concreta con forma de comprobar si mejora |
+| **Comunicación** | Desordenado | Se entiende | Estructurado y breve | Un tercero podría actuar con el informe |
+
+: Rúbrica común para los ejercicios de análisis {#tbl-rubrica-analisis}
+
